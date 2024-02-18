@@ -16,7 +16,7 @@ I am fluent in greek, english and spanish, I have some basic knowledge of swedis
 <table border="0">
  <tr>
     <td>2016-2021</td>
-    <td> Ph.D. in Computational Organic Chemistry, National and Kapodistrian University of Athens, Greece </td>
+    <td> <b> Ph.D. in Computational Organic Chemistry</b><br> <i>National and Kapodistrian University of Athens, Greece </i> </td>
  </tr>
  <tr>
     <td>2012-2014</td>
