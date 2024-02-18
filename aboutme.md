@@ -4,12 +4,7 @@ title: About me
 subtitle: Why you'd want to go on a date with me
 ---
 
-My name is Inigo Montoya. I have the following qualities:
-
-- I rock a great mustache
-- I'm extremely loyal to my family
-
-What else do you need?
+I am a Theoretical and Computational Chemist with a passion for reaction mechanisms and TS hunting. I currently work on catalysis but I have extensive experience in simulating systems of biological interest (proteins, drug molecules and cellular membranes). My computational techniques span from all atom Molecular Dynamics to Density Functional Theory. I am eager to implement AI/ML in my research.
 
 ### My story
 
