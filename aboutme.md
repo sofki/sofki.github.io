@@ -20,11 +20,11 @@ I am fluent in greek, english and spanish, I have some basic knowledge of swedis
  </tr>
  <tr>
     <td>2012-2014</td>
-    <td>Master in Theoretical Chemistry, Uppsala University, Sweden </td>
+    <td> <b>Master in Theoretical Chemistry</b><br> <i>Uppsala University, Sweden </i></td>
  </tr>
  <tr>
     <td>2006-2012</td>
-    <td>Degree in Chemistry, National and Kapodistrian University of Athens, Greece </td>
+    <td><b>Degree in Chemistry</b>b><br> <i> National and Kapodistrian University of Athens, Greece</i> </td>
  </tr>
 
 </table>
