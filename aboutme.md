@@ -15,18 +15,31 @@ I am fluent in _greek_, _english_ and _spanish_, I have some basic knowledge of 
 
 ### Education
 
-<table style="border: 1px dashed; width: 500px;">
- <tr>
-    <td>2016-2021</td>
-    <td> <b> Ph.D. in Computational Organic Chemistry</b><br> <i>National and Kapodistrian University of Athens, Greece </i> </td>
- </tr>
- <tr>
-    <td>2012-2014</td>
-    <td> <b>Master in Theoretical Chemistry</b><br> <i>Uppsala University, Sweden </i></td>
- </tr>
- <tr>
-    <td>2006-2012</td>
-    <td><b>Degree in Chemistry</b>b><br> <i> National and Kapodistrian University of Athens, Greece</i> </td>
- </tr>
-
+<style type="text/css">
+.tg  {border:none;border-collapse:collapse;border-spacing:0;}
+.tg td{border-style:solid;border-width:0px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;
+  padding:10px 5px;word-break:normal;}
+.tg th{border-style:solid;border-width:0px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;
+  overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg .tg-lboi{border-color:inherit;text-align:left;vertical-align:middle}
+.tg .tg-wp8o{border-color:#000000;text-align:center;vertical-align:top}
+.tg .tg-0pky{border-color:inherit;text-align:left;vertical-align:top}
+</style>
+<table class="tg">
+<thead>
+  <tr>
+    <th class="tg-wp8o">2016-2021</th>
+    <th class="tg-0pky">Ph.D. in Computational Organic Chemistry<br>National and Kapodistrian University of Athens, Greece</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td class="tg-wp8o">2012-2014</td>
+    <td class="tg-0pky">Master in Theoretical Chemistry<br>Uppsala University, Sweden</td>
+  </tr>
+  <tr>
+    <td class="tg-wp8o">2006-2012</td>
+    <td class="tg-lboi">Bachelor in Chemistry<br>National and Kapodistrian University of Athens, Greece</td>
+  </tr>
+</tbody>
 </table>
