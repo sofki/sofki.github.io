@@ -29,17 +29,17 @@ I am fluent in _greek_, _english_ and _spanish_, I have some basic knowledge of 
 <thead>
   <tr>
     <th class="tg-wp8o">2016-2021</th>
-    <th class="tg-0pky"><b>Ph.D. in Computational Organic Chemistry</b><br><i>National and Kapodistrian University of Athens, Greece</i></th>
+    <th class="tg-0pky"><span style="font-weight:bold">Ph.D. in Computational Organic Chemistry</span><br><span style="font-style:italic">National and Kapodistrian University of Athens, Greece</span></th>
   </tr>
 </thead>
 <tbody>
   <tr>
     <td class="tg-wp8o">2012-2014</td>
-    <td class="tg-0pky"><b>Master in Theoretical Chemistry</b><br><i>Uppsala University, Sweden</i></td>
+    <td class="tg-0pky"><span style="font-weight:bold">Master in Theoretical Chemistry</span><br><span style="font-style:italic">Uppsala University, Sweden</span></td>
   </tr>
   <tr>
     <td class="tg-wp8o">2006-2012</td>
-    <td class="tg-lboi"><b>Bachelor in Chemistry</b><br><i>National and Kapodistrian University of Athens, Greece</i></td>
+    <td class="tg-lboi"><span style="font-weight:bold">Degree in Chemistry</span><br><span style="font-style:italic">National and Kapodistrian University of Athens, Greece</span></td>
   </tr>
 </tbody>
 </table>
