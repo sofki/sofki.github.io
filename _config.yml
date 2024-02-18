@@ -19,10 +19,10 @@ author: Sofia Kiriakidi
 ###############################################
 
 navbar-links:
-  About Me: "aboutme"
+  About: "aboutme"
   Publications: "publications"
   Research: "research"
-  Upcoming Talks: "conferences"
+  Talks: "conferences"
   Awards & Grants: "awards"
 
 ################
