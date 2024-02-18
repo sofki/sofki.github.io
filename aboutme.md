@@ -13,6 +13,17 @@ I am fluent in greek, english and spanish, I have some basic knowledge of swedis
 
 ### Education
 
+<table border="0">
+ <tr>
+    <td>2016-2021</td>
+    <td> Ph.D. in Computational Organic Chemistry National and Kapodistrian University of Athens, Greece </td>
+ </tr>
+ <tr>
+    <td>Lorem ipsum ...</td>
+    <td>Lorem ipsum ...</td>
+ </tr>
+</table>
+
 | 2016-2021 | Ph.D. in Computational Organic Chemistry National and Kapodistrian University of Athens, Greece |
 |:---------:|-------------------------------------------------------------------------------------------------|
 | 2012-2014 | Master in Theoretical Chemistry Uppsala University, Sweden                                      |
