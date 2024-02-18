@@ -16,7 +16,7 @@ I am fluent in _greek_, _english_ and _spanish_, I have some basic knowledge of 
 ### Education
 
 #### 2016-2021
-<img src=assets/img/cap.svg width="48">**Ph.D. in Computational Organic Chemistry**  
+<img "src=assets/img/cap.svg" width="55">**Ph.D. in Computational Organic Chemistry**  
 _National and Kapodistrian University of Athens, Greece_
 Master in Theoretical Chemistry Uppsala University, Sweden 
 Degree in ChemistryNational and Kapodistrian University of Athens, Greece
