@@ -20,8 +20,12 @@ author: Sofia Kiriakidi
 
 navbar-links:
   About Me: "aboutme"
+  Education: "education"
+  Research Experience: "research"
+  Teaching: "teaching"
   Publications: "publications"
   Conferences: "conferences"
+  Awards & Grants: "awards"
 
 ################
 # --- Logo --- #
