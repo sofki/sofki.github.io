@@ -340,9 +340,9 @@ img {
 }
 
 .navbar-custom .avatar-container .avatar-img-border {
-  width: 150px; /* Adjust the width as needed */
-  height: 150px; /* Adjust the height as needed */
-  margin-left: -75px; /* Adjust half of the width */
+  width: 300px; /* Adjust the width as needed */
+  height: 300px; /* Adjust the height as needed */
+  margin-left: -150px; /* Adjust half of the width */
   width: 100%;
   {% unless site.round-avatar == false %}
     border-radius: 50%;
