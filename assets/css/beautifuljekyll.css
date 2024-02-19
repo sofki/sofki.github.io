@@ -341,7 +341,7 @@ img {
 
 .navbar-custom .avatar-container .avatar-img-border {
   margin-left: -50px; /* Adjust half of the width */
-  width: 200%;
+  width: 100%;
   {% unless site.round-avatar == false %}
     border-radius: 50%;
     box-shadow: 0 0 0.5rem rgba(0, 0, 0, .8);
