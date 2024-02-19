@@ -13,10 +13,10 @@ My **areas of specialization** include _Reactivity_, _Catalysis_, _DFT_, _Biomol
 I am fluent in _greek_, _english_ and _spanish_, I have some basic knowledge of _swedish_ and _french_ and I am currently learning _italian_!
 
 
-### Education
+### Education <img src="https://sofki.github.io/assets/img/cap.svg" width="55">
 
 **2016-2021**  
-<img src="https://sofki.github.io/assets/img/cap.svg" width="55">**Ph.D. in Computational Organic Chemistry**  
+**Ph.D. in Computational Organic Chemistry**  
 _National and Kapodistrian University of Athens, Greece_
 
 **2012-2014**  
