@@ -16,7 +16,7 @@ I am fluent in _greek_, _english_ and _spanish_, I have some basic knowledge of 
 ### Education
 
 **2016-2021**  
-<img src=""https://sofki.github.io/assets/img/pic.jpg"" width="55">**Ph.D. in Computational Organic Chemistry**  
+<img src="https://sofki.github.io/assets/img/pic.jpg" width="55">**Ph.D. in Computational Organic Chemistry**  
 _National and Kapodistrian University of Athens, Greece_
 
 **2012-2014**  
