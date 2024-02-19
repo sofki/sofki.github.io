@@ -341,9 +341,9 @@ img {
 
 .navbar-custom .avatar-container .avatar-img-border {
   margin-left: -50px; /* Adjust half of the width */
-  width: 100%;
+  width: 200%;
   {% unless site.round-avatar == false %}
-    border-radius: 100%;
+    border-radius: 50%;
     box-shadow: 0 0 0.5rem rgba(0, 0, 0, .8);
     -webkit-box-shadow: 0 0 0.3125rem rgba(0, 0, 0, .8);
     -moz-box-shadow: 0 0 0.5rem rgba(0, 0, 0, .8);
