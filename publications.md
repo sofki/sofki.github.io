@@ -28,4 +28,16 @@ issn: 2516-1075
 
 11. A. Konstantinidi, N. Naziris, M. Chountoulesi, et al., [Comparative Perturbation Effects Exerted by the Influenza A M2 WT Protein Inhibitors Amantadine and the Spiro-pyrrolidine-2,2-adamantane Variant AK13 to Membrane Bilayers Studied Using Biophysical Experiments and Molecular Dynamics Simulations](https://doi.org/10.1021/ACS.JPCB.8B07071), _Journal of Physical Chemistry B_, vol. 122, no. 43, pp. 9877–9895, Nov. 2018, issn: 15205207.
 
-12. **S. Kiriakidi**, O. Nieto Faza, A. Kolocouris, and C. S. López, [Governing effects in the mechanism of the gold-catalyzed cycloisomerization of allenic hydroxylamine derivatives](https://doi.org/10.1039/C7OB01275F), _Organic Biomolecular Chemistry_, vol. 15, no. 28, pp. 5920–5926, Jul. 2017, issn: 1477-0539. 
+12. **S. Kiriakidi**, O. Nieto Faza, A. Kolocouris, and C. S. López, [Governing effects in the mechanism of the gold-catalyzed cycloisomerization of allenic hydroxylamine derivatives](https://doi.org/10.1039/C7OB01275F), _Organic Biomolecular Chemistry_, vol. 15, no. 28, pp. 5920–5926, Jul. 2017, issn: 1477-0539.
+
+### Books and Chapters
+
+1. E. Chontzopoulou, **S. Kiriakidi**, P. Zoumpoulakis, and T. Mavromoustakos, [Principles of Computational Chemistry](https://repository.kallipos.gr/bitstream/11419/8624/4/88-MAVROMOUSTAKOS-Principles-in-computational-chemistry.pdf). Kallipos Academic Editions, 2023.
+
+2. **S. Kiriakidi**, Z. Cournia, and T.Mavromoustakos, [Effects of cholesterol on the GPCR AT1 receptor and its interplay with AT1 antagonists](https://doi.org/10.1016/B978-0-323-85857-1.00030-4). Academic Press, Jan. 2022, pp. 147–168.
+
+3. C. M. Chatzigiannis, **S. Kiriakidi**, A. G. Tzakos, and T. Mavromoustakos, [2D DOSY NMR: A Valuable Tool to Confirm the Complexation in Drug Delivery Systems](https://doi.org/10.1007/978-1-0716-0920-0_18). Humana Press Inc., 2021, vol. 2207, pp. 235–246.
+
+4. **S. Kiriakidi** and T. Mavromoustakos, [Study of Candesartan Cilexetil: 2-Hydroxypropyl-β-Cyclodextrin Interactions: A Computational Approach Using Steered Molecular Dynamics Simulations](https://doi.org/10.1007/978-1-0716-0920-0_5). Humana Press Inc., 2021, vol. 2207, pp. 45–70.
+
+5. **S. Kiriakidi**, A. Kolocouris, G. Liapakis, S. Ikram, S. Durdagi, and T. Mavromoustakos, [Effects of cholesterol on GPCR function: Insights from computational and experimental studies](https://doi.org/10.1007/978-3-030-14265-0_5). Springer New York LLC, 2019, vol. 1135, pp. 89–103.
