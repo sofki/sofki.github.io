@@ -52,4 +52,5 @@ subproducts.](https://doi.org/10.26434/CHEMRXIV-2023-CGTDN), Feb. 2023.
 ### Theses
 
 1. **S. Kiriakidi**, [Applications of theoretical and biophysical studies on rational drug design](https://www.didaktorika.gr/eadd/handle/10442/48949), 2021
-2 S. Kiriakidi, [Theoretical investigation of the hydrogen-generating mechanism of Co(py)(bpy)Cl2](https://urn.kb.se/resolve?urn=urn:nbn:se:uu:diva-421157), 2014
+
+2. **S. Kiriakidi**, [Theoretical investigation of the hydrogen-generating mechanism of Co(py)(bpy)Cl2](https://urn.kb.se/resolve?urn=urn:nbn:se:uu:diva-421157), 2014
