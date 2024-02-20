@@ -41,3 +41,15 @@ issn: 2516-1075
 4. **S. Kiriakidi** and T. Mavromoustakos, [Study of Candesartan Cilexetil: 2-Hydroxypropyl-β-Cyclodextrin Interactions: A Computational Approach Using Steered Molecular Dynamics Simulations](https://doi.org/10.1007/978-1-0716-0920-0_5). Humana Press Inc., 2021, vol. 2207, pp. 45–70.
 
 5. **S. Kiriakidi**, A. Kolocouris, G. Liapakis, S. Ikram, S. Durdagi, and T. Mavromoustakos, [Effects of cholesterol on GPCR function: Insights from computational and experimental studies](https://doi.org/10.1007/978-3-030-14265-0_5). Springer New York LLC, 2019, vol. 1135, pp. 89–103.
+
+### Preprints
+
+1. **S. Kiriakidi**, C. S. López, and O. N. Faza, [Three cycles in the dioxomolybdenum-catalyzed reduction of nitrobenzenes to anilines with pinacol. A computational study towards the valorization of biomass
+subproducts.](https://doi.org/10.26434/CHEMRXIV-2023-CGTDN), Feb. 2023. 
+
+2. I. Andreadelis, **S. Kiriakidi**, C. Lamprakis, et al., [Membrane Composition and Raf[CRD]-Membrane Attachment Are Driving Forces for K-Ras4B Dimer Stability](https://doi.org/10.26434/CHEMRXIV-2021-4PDZB), Jun. 2021.
+
+### Theses
+
+1. **S. Kiriakidi**, [Applications of theoretical and biophysical studies on rational drug design](https://www.didaktorika.gr/eadd/handle/10442/48949), 2021
+2 S. Kiriakidi, [Theoretical investigation of the hydrogen-generating mechanism of Co[(py)(bpy)Cl2]](https://urn.kb.se/resolve?urn=urn:nbn:se:uu:diva-421157), 2014
