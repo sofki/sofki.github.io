@@ -26,3 +26,30 @@ _Uppsala University, Sweden_
 **2006-2012**  
 **Degree in Chemistry**  
 _National and Kapodistrian University of Athens, Greece_
+
+### Research <img src="https://sofki.github.io/assets/img/research.png" width="55">
+
+**11/2023-now**  
+**Xunta de Galicia Postdoctoral Fellow**  
+_Universidade de Vigo, Spain_ & _Universitá di Bologna, Italy_
+
+**10/2021-10/2023**  
+**Postdoctoral Researcher**  
+_Universidade de Vigo, Spain_
+
+**3/2021-12/2021**  
+**Postdoctoral Researcher**  
+_Biomedical Research Foundation of the Academy of Athens_
+
+### Teaching <img src="https://sofki.github.io/assets/img/teacher.png" width="55">
+
+**11/2023-now**  
+**Supervision of doctoral and bachelor theses**  
+
+**2022-2021**  
+**Molecular Polymeric Materials**    
+_Master @ Universidade de Vigo, Spain_
+
+**2017-2021**  
+**Organic Chemistry Lab Supervision**    
+_Undergraduate Lab @ National and Kapodistrian University of Athens, Greece_
