@@ -29,7 +29,7 @@ _Uppsala University, Sweden_
 **Degree in Chemistry**  
 _National and Kapodistrian University of Athens, Greece_
 
-### Research <img src="https://sofki.github.io/assets/img/research.png" width="55">
+### Research Experience <img src="https://sofki.github.io/assets/img/research.png" width="55">
 
 **11/2023-now**  
 **Xunta de Galicia Postdoctoral Fellow**  
@@ -43,7 +43,7 @@ _Universidade de Vigo, Spain_
 **Postdoctoral Researcher**  
 _Biomedical Research Foundation of the Academy of Athens_
 
-### Teaching <img src="https://sofki.github.io/assets/img/teacher.png" width="55">
+### Teaching Experience <img src="https://sofki.github.io/assets/img/teacher.png" width="55">
 
 **11/2023-now**  
 **Supervision of doctoral and bachelor theses**  
