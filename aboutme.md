@@ -8,9 +8,11 @@ I am a _Theoretical and Computational Chemist_ with a passion for reaction mecha
 
 My **areas of specialization** include _Reactivity_, _Catalysis_, _DFT_, _Biomolecular Simulations_, _Molecular Dynamics_ and _Drug Design_.  
 **I am interested in** _science communication_, _graphic design_, _acrobatics_, _cooking_ and learning new _languages_.  
+I am fluent in _greek_, _english_ and _spanish_, I have some basic knowledge of _swedish_ and _french_ and I am currently learning _italian_!
+
 **I advocate for** _labour rights_ and _gender equality_ in science.   
 
-I am fluent in _greek_, _english_ and _spanish_, I have some basic knowledge of _swedish_ and _french_ and I am currently learning _italian_!
+
 
 
 ### Education <img src="https://sofki.github.io/assets/img/cap.svg" width="55">
