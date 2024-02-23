@@ -16,11 +16,11 @@ Award for best oral presentation
 ### Research Grants
 
 
-**2024**
+**2024**   
 **MSCA ERA Individual Posdoctoral Fellowships**   
 for the project *_Waste2Drug_*, proposal ID: 101180582, _164328€_
 
-**2023**
+**2023**   
 **Xunta de Galicia Postdoctoral Fellowship**    
 contract number ED481B-2023-044, _132660€_
 
