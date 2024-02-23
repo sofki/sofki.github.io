@@ -17,7 +17,7 @@ Award for best oral presentation
 
 
 **2024**   
-**MSCA ERA Individual Posdoctoral Fellowships**   
+**Marie Sklodowska Curie Actions ERA Individual Posdoctoral Fellowship**   
 for the project *_Waste2Drug_*, proposal ID: 101180582, _164328€_
 
 **2023**   
