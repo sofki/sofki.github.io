@@ -18,14 +18,14 @@ Award for best oral presentation
 
 **2024**   
 **Marie Sklodowska Curie Actions ERA Individual Posdoctoral Fellowship**   
-for the project **_Waste2Drug_**, proposal ID: 101180582, _164328€_
+for the project **_Waste2Drug_**, proposal ID: 101180582
 
 **2023**   
 **Xunta de Galicia Postdoctoral Fellowship**    
-contract number ED481B-2023-044, _132660€_
+contract number ED481B-2023-044
 
 **2017**   
 **HFRI State Scholarship for PhD candidates**   
-General Secretariat of Research and Technology of Greece, _24600€_
+General Secretariat of Research and Technology of Greece
 
 
