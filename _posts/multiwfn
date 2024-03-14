@@ -1,1 +1,15 @@
+---
+layout: post
+title: Plotting NCI and AIM with Multiwfn and VMD
+subtitle: A step by step tutorial
+cover-img: 
+thumbnail-img: 
+share-img: 
+tags: [tutorials, MultiWfn, NCI, AIM]
+author: Sofia Kiriakidi
+---
 
+**Plot NCI**
+
+1. Open Multiwfn and drag and drop your .wfn file.   
+2. 
