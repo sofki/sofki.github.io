@@ -17,7 +17,7 @@ Award for best oral presentation
 
 
 **2024**   
-**Marie Sklodowska Curie Actions ERA Individual Posdoctoral Fellowship**   
+**Marie Sklodowska Curie Actions Posdoctoral Fellowship**   
 for the project **_Waste2Drug_**, proposal ID: 101180582
 
 **2023**   
