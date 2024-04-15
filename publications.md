@@ -5,7 +5,7 @@ title: Publications
 
 ### Peer-reviewed Research Articles
 
-1. R. Pedrazzani, **S. Kiriakidi**, M. Monari, I. Lazzarini, G. Bertuzzi, C. S. López and M. Bandini,  [Fluorinated Biphenyl Phosphine Ligands for Accelerated Au(I)-Catalysis] (https://pubs.acs.org/doi/10.1021/acscatal.4c00593)), _ACS Catalysis_, 14, pp. 6128–6136, 2024
+1. R. Pedrazzani, **S. Kiriakidi**, M. Monari, I. Lazzarini, G. Bertuzzi, C. S. López and M. Bandini, [Fluorinated Biphenyl Phosphine Ligands for Accelerated AuI-Catalysis](https://pubs.acs.org/doi/10.1021/acscatal.4c00593)), _ACS Catalysis_, 14, pp. 6128–6136, 2024
    
 2. **S. Kiriakidi**, C. Silva, R. Sanz Díez, and O. Nieto Faza, [Deciphering nitroaromatics reduction: Theoretical insights into dioxomolybdenum catalysis with biomass-derived pinacol](https://doi.org/10.1002/cctc.202301575), _ChemCatChem_, e202301575 
   
