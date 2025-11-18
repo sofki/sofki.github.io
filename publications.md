@@ -5,34 +5,49 @@ title: Publications
 
 ### Peer-reviewed Research Articles
 
-1. R. Pedrazzani, **S. Kiriakidi**, M. Monari, I. Lazzarini, G. Bertuzzi, C. S. López and M. Bandini, [Fluorinated Biphenyl Phosphine Ligands for Accelerated AuI-Catalysis](https://pubs.acs.org/doi/10.1021/acscatal.4c00593), _ACS Catalysis_, 14, pp. 6128–6136, 2024
+
+1. R. Giovanelli, G. Gallorini, Y. Huang, A. Brunetti, K. D. Nikopoulos, M. Monari, C. Silva Lopez, **S. Kiriakidi<b>*</b>**, G. Bertuzzi and Marco Bandini, [Dual Au(I) Catalysis in Regioselective Cycloaddition of Bicyclo[1.1.0]butanes with Allenes](https://pubs.acs.org/doi/full/10.1021/acscatal.5c03898), _ACS Catalysis_, 15, 17, pp. 15698–15705, 2025
+
+2. M. Solas, C. Sedano, S. Suárez-Pantiga, **S. Kiriakidi**, C. Silva-López and Roberto Sanz, [Three-Way Chemodivergent Derivatization of Non-Activated 2-Arylphenyl Benzyl Ethers](https://pubs.acs.org/doi/full/10.1021/acs.joc.5c01460), _J. Org. Chem._, 90, 33, pp. 11945–11955, 2025
+
+3. M. Garbini, S. Moncullo, **S. Kiriakidi**, M. Melucci, S. Bellini, C. Zanardi, C. Silva López, G. Bertuzzi and M. Bandini, [Electrochemical Chemo- and Regioselective Heterofunctionalization of Tropones via C(sp2)H Derivatization](https://advanced.onlinelibrary.wiley.com/doi/full/10.1002/adsc.9592), _Adv. Synth. Catal._, 367, pp. e9592, 2025
+
+4. A. Brunetti, **S. Kiriakidi**, M. Garbini, G. Monda, C. Zanardi, C. Silva López, G. Bertuzzi and M. Bandini, [Electrochemical Nickel-Catalyzed C(sp2)-H Functionalization of Tropones with Aldehydes](https://pubs.acs.org/doi/full/10.1021/acscatal.4c07120), _ACS Catalysis_, 15, 4, pp. 3184–3190, 2025
+
+5. N. Georgiou, E. Chontzopoulou, E. Alexandros Routsi, I. Georgia Stavrakaki, E. Petsas, N. Zoupanou, M. Georgia Kakava, D. Tzeli, T. Mavromoustakos and **S. Kiriakidi<b>*</b>**, [Exploring Hypertension: The Role of AT1 Receptors, Sartans, and Lipid Bilayers](https://pubs.acs.org/doi/full/10.1021/acsomega.4c06351), _ACS Omega_,  9, 45, pp. 44876–44890, 2024
+
+6. G. Gallorini, **S. Kiriakidi**, S. Bellini, C. Silva López, G. Bertuzzi and M. Bandini, [Site-Selective Gold-Catalyzed Alkylation of α-Aminotropones with Allenes](https://pubs.acs.org/doi/abs/10.1021/acs.orglett.4c03372), _Org. Lett._ , 26, 43, pp. 9251–9256, 2024
+
+7. R. Giovanelli, G. Monda, **S. Kiriakidi**, C. Silva López, G. Bertuzzi and M. Bandini, [Direct Access to Benzolactams and Benzolactones via Nickel Catalyzed Carbonylation with CO2](https://chemistry-europe.onlinelibrary.wiley.com/doi/full/10.1002/chem.202401658), _Chem. Eur. J._,  30, pp. e202401658, 2024 
+
+8. R. Pedrazzani, **S. Kiriakidi**, M. Monari, I. Lazzarini, G. Bertuzzi, C. S. López and M. Bandini, [Fluorinated Biphenyl Phosphine Ligands for Accelerated AuI-Catalysis](https://pubs.acs.org/doi/10.1021/acscatal.4c00593), _ACS Catalysis_, 14, pp. 6128–6136, 2024
    
-2. **S. Kiriakidi**, C. Silva, R. Sanz Díez, and O. Nieto Faza, [Deciphering nitroaromatics reduction: Theoretical insights into dioxomolybdenum catalysis with biomass-derived pinacol](https://doi.org/10.1002/cctc.202301575), _ChemCatChem_, e202301575 
+9. **S. Kiriakidi**, C. Silva, R. Sanz Díez, and O. Nieto Faza, [Deciphering nitroaromatics reduction: Theoretical insights into dioxomolybdenum catalysis with biomass-derived pinacol](https://doi.org/10.1002/cctc.202301575), _ChemCatChem_, e202301575 
   
-3. N. Georgiou, M. G. Kakava, E. A. Routsi, E. Petsas, N. Stavridis, C. Freris, N. Zoupanou, K. Moschovou, **S. Kiriakidi**, and T. Mavromoustakos, [Quercetin: A Potential Polydynamic Drug](https://doi.org/10.3390/molecules28248141), _Molecules_, vol.28, no. 24, p. 8141, 2023
+10. N. Georgiou, M. G. Kakava, E. A. Routsi, E. Petsas, N. Stavridis, C. Freris, N. Zoupanou, K. Moschovou, **S. Kiriakidi**, and T. Mavromoustakos, [Quercetin: A Potential Polydynamic Drug](https://doi.org/10.3390/molecules28248141), _Molecules_, vol.28, no. 24, p. 8141, 2023
 
-4.  I. Andreadelis, **S. Kiriakidi**, C. Lamprakis, et al., [Membrane Composition and Raf[CRD]-Membrane Attachment Are Driving Forces for K-Ras4B Dimer Stability](https://doi.org/10.1021/ACS.JPCB.1C01184), _Journal of Physical Chemistry B_, vol. 126, no. 7, pp. 1504–1519, Feb. 2022, issn: 15205207
+11.  I. Andreadelis, **S. Kiriakidi**, C. Lamprakis, et al., [Membrane Composition and Raf[CRD]-Membrane Attachment Are Driving Forces for K-Ras4B Dimer Stability](https://doi.org/10.1021/ACS.JPCB.1C01184), _Journal of Physical Chemistry B_, vol. 126, no. 7, pp. 1504–1519, Feb. 2022, issn: 15205207
 
-5. L. Xue Toro, **S. Kiriakidi**, A. Thapper, S. Ott, and M. Lundberg, [Two routes to hydrogen evolution for a Co-polypyridyl complex with two open sites](https://doi.org/10.1088/2516-1075/AC7BCA), _Electronic Structure_, vol. 4, no. 3, p. 034 002, Jul. 2022,
+12. L. Xue Toro, **S. Kiriakidi**, A. Thapper, S. Ott, and M. Lundberg, [Two routes to hydrogen evolution for a Co-polypyridyl complex with two open sites](https://doi.org/10.1088/2516-1075/AC7BCA), _Electronic Structure_, vol. 4, no. 3, p. 034 002, Jul. 2022,
 issn: 2516-1075
 
-6. E. Chontzopoulou, C. D. Papaemmanouil, M. V. Chatziathanasiadou, et al., [Molecular investigation of artificial and natural sweeteners as potential anti-inflammatory agents](https://doi.org/10.1080/07391102.2021.1973565), _Journal of Biomolecular Structure and Dynamics_, vol. 40, no. 23, pp. 12 608–12 620, 2021, issn: 15380254
+13. E. Chontzopoulou, C. D. Papaemmanouil, M. V. Chatziathanasiadou, et al., [Molecular investigation of artificial and natural sweeteners as potential anti-inflammatory agents](https://doi.org/10.1080/07391102.2021.1973565), _Journal of Biomolecular Structure and Dynamics_, vol. 40, no. 23, pp. 12 608–12 620, 2021, issn: 15380254
 
-7. **S. Kiriakidi**, C. Chatzigiannis, C. Papaemmanouil, A. G. Tzakos, Z. Cournia, and T. Mavromoustakos, [Interplay of cholesterol, membrane bilayers and the AT1R: A cholesterol consensus motif on AT1R is revealed](https://doi.org/10.1016/J.CSBJ.2020.11.042), _Computational and Structural Biotechnology Journal_, vol. 19, pp. 110–120, Jan. 2021, issn:2001-0370
+14. **S. Kiriakidi**, C. Chatzigiannis, C. Papaemmanouil, A. G. Tzakos, Z. Cournia, and T. Mavromoustakos, [Interplay of cholesterol, membrane bilayers and the AT1R: A cholesterol consensus motif on AT1R is revealed](https://doi.org/10.1016/J.CSBJ.2020.11.042), _Computational and Structural Biotechnology Journal_, vol. 19, pp. 110–120, Jan. 2021, issn:2001-0370
 
-8. A. D. Tsiailanis, E. I. Vrettos, M. Choleva, et al., [Development of a DHA-Losartan hybrid as a potent inhibitor of multiple pathway-induced platelet aggregation](https://doi.org/10.1080/07391102.2021.1996461), _Journal of Biomolecular Structure and Dynamics_, vol. 40, no. 24, pp. 13 889–13 900, 2021, issn: 15380254
+15. A. D. Tsiailanis, E. I. Vrettos, M. Choleva, et al., [Development of a DHA-Losartan hybrid as a potent inhibitor of multiple pathway-induced platelet aggregation](https://doi.org/10.1080/07391102.2021.1996461), _Journal of Biomolecular Structure and Dynamics_, vol. 40, no. 24, pp. 13 889–13 900, 2021, issn: 15380254
 
-9. **S. Kiriakidi**, C. Chatzigiannis, C. Papaemmanouil, A. G. Tzakos, and T. Mavromoustakos, [Exploring the role of the membrane bilayer in the recognition of candesartan by its GPCR AT1 receptor](https://doi.org/10.1016/J.BBAMEM.2019.183142), _Biochimica et Biophysica Acta (BBA) - Biomembranes_, vol. 1862, no. 3, p. 183 142, Mar. 2020, issn:0005-2736.
+16. **S. Kiriakidi**, C. Chatzigiannis, C. Papaemmanouil, A. G. Tzakos, and T. Mavromoustakos, [Exploring the role of the membrane bilayer in the recognition of candesartan by its GPCR AT1 receptor](https://doi.org/10.1016/J.BBAMEM.2019.183142), _Biochimica et Biophysica Acta (BBA) - Biomembranes_, vol. 1862, no. 3, p. 183 142, Mar. 2020, issn:0005-2736.
 
-10. C. Koukoulitsa, E. Chontzopoulou, **S. Kiriakidi**, A. G. Tzakos, and T. Mavromoustakos, [A Journey to the Conformational Analysis of T-Cell Epitope Peptides Involved in Multiple Sclerosis](https://doi.org/10.3390/BRAINSCI10060356), _Brain Sciences_, 2020, Vol. 10, Page 356, vol. 10, no. 6, p. 356, Jun. 2020, issn: 2076-3425.
+17. C. Koukoulitsa, E. Chontzopoulou, **S. Kiriakidi**, A. G. Tzakos, and T. Mavromoustakos, [A Journey to the Conformational Analysis of T-Cell Epitope Peptides Involved in Multiple Sclerosis](https://doi.org/10.3390/BRAINSCI10060356), _Brain Sciences_, 2020, Vol. 10, Page 356, vol. 10, no. 6, p. 356, Jun. 2020, issn: 2076-3425.
 
-11. A. D. Tsiailanis, A. Renziehausen, **S. Kiriakidi**, et al., [Enhancement of glioblastoma multiforme therapy through a novel Quercetin-Losartan hybrid](https://doi.org/10.1016/J.FREERADBIOMED.2020.08.007), _Free Radical Biology and Medicine_, vol. 160, pp. 391–402, Nov. 2020, issn: 0891-5849.
+18. A. D. Tsiailanis, A. Renziehausen, **S. Kiriakidi**, et al., [Enhancement of glioblastoma multiforme therapy through a novel Quercetin-Losartan hybrid](https://doi.org/10.1016/J.FREERADBIOMED.2020.08.007), _Free Radical Biology and Medicine_, vol. 160, pp. 391–402, Nov. 2020, issn: 0891-5849.
 
-12. D. Ntountaniotis, I. Andreadelis, T. F. Kellici, et al., [Host-Guest Interactions between Candesartan and Its Prodrug Candesartan Cilexetil in Complex with 2-Hydroxypropyl-β-cyclodextrin: On the Biological Potency for Angiotensin II Antagonism](https://doi.org/10.1021/ACS.MOLPHARMACEUT.8B01212), _Molecular Pharmaceutics_, vol. 16, no. 3, pp. 1255–1271, Mar. 2019, issn: 15438392.
+19. D. Ntountaniotis, I. Andreadelis, T. F. Kellici, et al., [Host-Guest Interactions between Candesartan and Its Prodrug Candesartan Cilexetil in Complex with 2-Hydroxypropyl-β-cyclodextrin: On the Biological Potency for Angiotensin II Antagonism](https://doi.org/10.1021/ACS.MOLPHARMACEUT.8B01212), _Molecular Pharmaceutics_, vol. 16, no. 3, pp. 1255–1271, Mar. 2019, issn: 15438392.
 
-13. A. Konstantinidi, N. Naziris, M. Chountoulesi, et al., [Comparative Perturbation Effects Exerted by the Influenza A M2 WT Protein Inhibitors Amantadine and the Spiro-pyrrolidine-2,2-adamantane Variant AK13 to Membrane Bilayers Studied Using Biophysical Experiments and Molecular Dynamics Simulations](https://doi.org/10.1021/ACS.JPCB.8B07071), _Journal of Physical Chemistry B_, vol. 122, no. 43, pp. 9877–9895, Nov. 2018, issn: 15205207.
+20. A. Konstantinidi, N. Naziris, M. Chountoulesi, et al., [Comparative Perturbation Effects Exerted by the Influenza A M2 WT Protein Inhibitors Amantadine and the Spiro-pyrrolidine-2,2-adamantane Variant AK13 to Membrane Bilayers Studied Using Biophysical Experiments and Molecular Dynamics Simulations](https://doi.org/10.1021/ACS.JPCB.8B07071), _Journal of Physical Chemistry B_, vol. 122, no. 43, pp. 9877–9895, Nov. 2018, issn: 15205207.
 
-14. **S. Kiriakidi**, O. Nieto Faza, A. Kolocouris, and C. S. López, [Governing effects in the mechanism of the gold-catalyzed cycloisomerization of allenic hydroxylamine derivatives](https://doi.org/10.1039/C7OB01275F), _Organic Biomolecular Chemistry_, vol. 15, no. 28, pp. 5920–5926, Jul. 2017, issn: 1477-0539.
+21. **S. Kiriakidi**, O. Nieto Faza, A. Kolocouris, and C. S. López, [Governing effects in the mechanism of the gold-catalyzed cycloisomerization of allenic hydroxylamine derivatives](https://doi.org/10.1039/C7OB01275F), _Organic Biomolecular Chemistry_, vol. 15, no. 28, pp. 5920–5926, Jul. 2017, issn: 1477-0539.
 
 ### Books and Chapters
 
