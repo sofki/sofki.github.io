@@ -46,6 +46,7 @@ _Biomedical Research Foundation of the Academy of Athens_
 ### Teaching Experience <img src="https://sofki.github.io/assets/img/teacher.png" width="55">
 
 **10/2024 & 11/2025**
+
 **Machine Learning in Organic Chemistry: From Molecular Representation to Predictive Modelling, Seminar and Practical Examples**
 _Master @ Universitá di Bologna, Italy_
 
