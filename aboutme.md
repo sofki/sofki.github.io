@@ -48,6 +48,7 @@ _Biomedical Research Foundation of the Academy of Athens_
 **10/2024 & 11/2025**
 **Machine Learning in Organic Chemistry: 
 From Molecular Representation to Predictive Modelling, Seminar and Practical Examples**
+
 _Master @ Universitá di Bologna, Italy_
 
 **11/2023-now**  
