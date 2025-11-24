@@ -31,7 +31,11 @@ _National and Kapodistrian University of Athens, Greece_
 
 ### Research Experience <img src="https://sofki.github.io/assets/img/research.png" width="55">
 
-**11/2023-now**  
+**09/2025-now**  
+**MSCA Postdoctoral Fellow, Project: [Waste2Drug](https://sofki.github.io/waste-2-drug/)**  
+_NovaMechanics Ltd, Cyprus_
+
+**11/2023-08/2025**  
 **Xunta de Galicia Postdoctoral Fellow**  
 _Universidade de Vigo, Spain_ & _Universitá di Bologna, Italy_
 
