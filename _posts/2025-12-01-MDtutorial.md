@@ -63,5 +63,15 @@ First we will need to separate the protein from the ligand and the cofactor in d
    ```
    Open the complex.gro with a text editor and copy the coordinates of cofactor.gro in the end:
 
+   <p align="center">
+   <img src="https://sofki.github.io//assets/img/cofactor.png" alt="Centered image" width="400"/>
+   </p>
+
+   Do the same with the p-cymene.gro:
+
+   <p align="center">
+   <img src="https://sofki.github.io//assets/img/p-cymene.png" alt="Centered image" width="400"/>
+   </p>
    
+  
   
