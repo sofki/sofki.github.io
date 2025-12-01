@@ -76,7 +76,7 @@ First we will need to separate the protein from the ligand and the cofactor in d
    After having copied the coordinates of both the cofactor and the ligand, you will need to adjust the number of coordinates in the beginning of the complex.gro file. In our case it was: <br>
    4943 (the number in apo_processed.gro) + 44 (the number in cofactor.gro) + 24 (the number in the p-cymene.gro) = 5011 in the final complex.gro file
    
-5. Now we will have to build the topology of the system, topol.top, by combining the cofactor and ligand topologies and position restraints with those of our system. We will use ```#include``` statements inside the        topol.top file that was already created by the ```pdb2gmx``` command, in order to include the .itp files for our ligands, created by the acpype and antechamber. However, some manipulation needs to be made when including several different topologies inside the topol.top file, because the ```#include``` statements must be made with the **correct order**, and no *[ atomtypes ]* should be placed after any *[ moleculetype ]* directive. If we have a look inside the cofactor_GMX.itp, we will see that it starts with an *[ atomtypes ]* and is followed with a *[ moleculetype ]* directive.
+4. Now we will have to build the topology of the system, topol.top, by combining the cofactor and ligand topologies and position restraints with those of our system. We will use ```#include``` statements inside the        topol.top file that was already created by the ```pdb2gmx``` command, in order to include the .itp files for our ligands, created by the acpype and antechamber. However, some manipulation needs to be made when including several different topologies inside the topol.top file, because the ```#include``` statements must be made with the **correct order**, and no *[ atomtypes ]* should be placed after any *[ moleculetype ]* directive. If we have a look inside the cofactor_GMX.itp, we will see that it starts with an *[ atomtypes ]* and is followed with a *[ moleculetype ]* directive.
 
    <p align="center">
    <img src="https://sofki.github.io//assets/img/ligandtop.png" alt="Centered image" width="400"/>
@@ -101,9 +101,9 @@ First we will need to separate the protein from the ligand and the cofactor in d
     #include "cofactor.itp"
     #include "p-cymene.itp"
     ```
-  It is wise to respect the order that the different molecule types appear in your complex.gro file when building topologies, in order to avoid future errors. Here we copied first the cofactor and tehn p-cymene after the protein inside the complex.gro file and in the topology we did the same; we first included the atomtypes for the cofcator and then for p-cymene using include statements. 
+  It is wise to respect the order that the different molecule types appear in your complex.gro file when building topologies, in order to avoid future errors. Here we copied first the cofactor and thεn p-cymene after the protein inside the complex.gro file and in the topology we did the same; we first included the atomtypes for the cofactor and then for p-cymene using include statements. 
 
-6. For the next step, we will have to include the rest of the cofactor's and ligand's topology inside our central topol.top file. To do so, we will start with the cofactor, and right after the ```; Include ligands topology``` block, we will include the molecule types for the co-factor:
+5. For the next step, we will have to include the rest of the cofactor's and ligand's topology inside our central topol.top file. To do so, we will start with the cofactor, and right after the ```; Include ligands topology``` block, we will include the molecule types for the co-factor:
 
    ```
    ;Include Molecule types for co-factor
@@ -112,14 +112,14 @@ First we will need to separate the protein from the ligand and the cofactor in d
    ```
   However, we will not place right after that the equivalent file for the p-cymene, because we also need to include the position restraints for the co-factor, that must be placed **exactly after** the *[ moleculetype ]* directive for this moelcule and before any other *[ moleculetype ]* directive. Thus, after the ```  ;Include Molecule types for co-factor ``` block we will copy the following:
 
-  ```
-  ; co-factor position restraints
-  #ifdef POSRES_LIG1
-  #include "posre_cofactor.itp"
-  #endif
+    ```
+    ; co-factor position restraints
+    #ifdef POSRES_LIG1
+    #include "posre_cofactor.itp"
+    #endif
 
-  ```
-  This chunk of code means that if -POSRES_LIG1 appears inside a gromacs potocol file (.mdp), the cofactor will be restarined. After finishing with the topology and position restrains of the cofactor, we will do the same for the ligand:
+    ```
+    This chunk of code means that if -POSRES_LIG1 appears inside a gromacs protocol file (.mdp), the cofactor will be restarined. After finishing with the topology and position restrains of the cofactor, we will do the   same for the ligand:
 
   ```
   ;Include Molecule types for p-cymene
@@ -133,15 +133,15 @@ First we will need to separate the protein from the ligand and the cofactor in d
   ```
   After that, the protein topology should appear in the topol.top file, as created by the ```pdb2gmx``` command. In our case, GROMACS treated the protein as one chain and the Mg<sup>2+</sup> ion as another chain, so the next block in our topol.top file reads:
 
-  ```
-  ; Include chain topologies
-  #include "topol_Protein_chain_A.itp"
-  #include "topol_Ion_chain_A2.itp"
+    ```
+    ; Include chain topologies
+    #include "topol_Protein_chain_A.itp"
+    #include "topol_Ion_chain_A2.itp"
 
-  ```
-  and then the water and ions topologies follow.
+    ```
+    and then the water and ions topologies follow.
 
-7. In the end of our topol.top file we will find the *[ molecules ]* directive. It will start with one moelcule of our protein chain A (the protein), then one moelcule of our ion chain 2 will follow (the Mg<sup>2+<\sup> ion) and then we will have to manually add the cofactor and the ligand:
+6. In the end of our topol.top file we will find the *[ molecules ]* directive. It will start with one moelcule of our protein chain A (the protein), then one moelcule of our ion chain 2 will follow (the Mg<sup>2+</sup> ion) and then we will have to manually add the cofactor and the ligand:
 
    ```
    [ molecules ]
