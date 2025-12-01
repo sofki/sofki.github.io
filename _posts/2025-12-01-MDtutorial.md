@@ -9,24 +9,7 @@ tags: [tutorials, GROMACS. MD]
 author: Sofia Kiriakidi
 ---
 
-MultiWfn is a very useful program for wavefunction analysis. You can use a .wfn or .wfx wavefunction file for plotting any occupied orbital, but for a more accurate LUMO (and any LUMO +n) the formatted checkpoint file is needed. I use Gaussian 16 for its generation.
+Building a complex system containing a protein (especially a metalloprotein) that contains small molecules that act aaas co-factors and a docked ligand can eb a very challenging procedure. In order to make things easier a created this tutorial using only free and open access resources, such as [Antechamber](https://ambermd.org/antechamber/ac.html), [acpype](https://alanwilter.github.io/acpype/) and [GROMACS](https://www.gromacs.org/).
 
-MultiWfn has a very complete manual that can be accessed [here](http://sobereva.com/multiwfn/misc/Multiwfn_3.8_dev.pdf) and a very informative YouTube channel with lots of video tutorials that can be accessed [here](https://www.youtube.com/@sobereva). 
+This tutorial aspires to help each user that has to perform this difficult task in the future and therefore serve the community as a free educational resource. Nonetheless, it serves an additional role. It can be referenced as a public protocol for the system preparations of the short MD simulations that followed the docking of p-cymene into each target protein to assess the stability of the protein-ligand complex, for the **MSCA**-funded project [**_Waste2Drug_**](https://sofki.github.io/waste-2-drug/). In this way, the reproducibility of the results and the [Open Science](https://rea.ec.europa.eu/open-science_en) principles of the project is ensured.
 
-I created this tutorial for my (and everyone's) easy future reference because sometime's it is kind of difficult to find the correct tutorial online or even browse through the manual!
-
-**Plot LUMO**
-
-1. Open Multiwfn and drag and drop your .fchk file.   
-2. Write **200** from the main functions menu: *Other functions (part 2)*
-3. Then choose the subfunction **3**: *Generate cube file for multiple orbital wavefunctions *
-4.Choose la for the alpha LUMO orbital.
-5. Choose the high quality grid by writing **3** (if your computer is slow, opt for a lower quality grid). A la.cub file is written.
-6. Copy the showcub.vmd file from the MultiWfn examples/scripts folder to your VMD folder.
-9. Open VMD and run the script by writing at VMD’s black console screen        
-          ```
-           source showcub.vmd
-          ```
-10. Then wirte cub la in your console. The alpha LUMO orbital will appear in your VMD window.
-
-Refer to [this post]([https://pubs.acs.org/doi/full/10.1021/acsomega.2c07389](http://sobereva.com/483))  from sobereva for more details 
