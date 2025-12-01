@@ -5,7 +5,7 @@ subtitle: A GROMACS tutorial for building a complex system with a metalloprotein
 cover-img: 
 thumbnail-img: https://sofki.github.io//assets/img/gmx.png
 share-img: https://sofki.github.io//assets/img/gmx.png
-tags: [tutorials, GROMACS. MD]
+tags: [tutorials, GROMACS, MD]
 author: Sofia Kiriakidi
 ---
 
@@ -55,3 +55,13 @@ First we will need to separate the protein from the ligand and the cofactor in d
      After the execution of the command we will be asked for the forcefield that we want to use (in this case the AMBER99SB forcefield), the water model (in this case TIP3P) and the type of termini that should be used in order to cap the system. In our case, the protein      was already capped through protein preparation and GROMACS recognised the cappings, so no question about termini was asked. If you omit -ignh that ignores hydrogens and places new ones, it is almost certain that you will get an error, as GROMACS will not recognise       the naming convention of your hydrogens. 
 
 ### Part 2: Combine structures and topologies
+
+3. The next step is to combine the structures in a single .gro file for your complex. Copy the apo_processed.gro into a new file called complex.gro:
+
+   ```
+   cp apo_processed.gro complex.gro
+   ```
+   Open the complex.gro with a text editor and copy the coordinates of cofactor.gro in the end:
+
+   
+  
