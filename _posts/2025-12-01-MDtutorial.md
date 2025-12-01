@@ -15,11 +15,11 @@ This tutorial aspires to help each user that has to perform this difficult task 
 
 This tutorial assumes that you already have a *prepared* protein and ligand file. Crystal structures deposited in RCSB may have a lot of problems, such as missing hydrogens, missing side-chains, even whole missing residues and protein loops. Moreover, the specific pH of the system that you want to simulate should be taken into account for the protonation of specific residues (such as histidines). Similar manipulations (especially taking care of the protonation) should be considered also for the ligand (and any cofactors that might be present and *important* for your system). Finally, anything present in the opdb that it is not relevant for your simulation (such as cocrystallized water molecules or additives) should be removed from the final, *prepared* structure.
 
-For this project, I used the [Enalos Asclepios](https://novamechanics.com/products/asclepios-knime-nodes/) KNIME tools, developed by [NovaMechanics Ltd](https://novamechanics.eu/) for the protein and ligand preparation. An alternative that is free for academic use is [CHARMM-GUI](https://www.charmm-gui.org/). However, there are several either paid or free options that you may use for your system's preparation that are beyond the scope of this tutorial.
+For this project, I used the [Enalos Asclepios](https://novamechanics.com/products/asclepios-knime-nodes/) KNIME tools, developed by [NovaMechanics Ltd](https://novamechanics.eu/) for the protein and ligand preparation. An alternative that is free for academic use is [CHARMM-GUI](https://www.charmm-gui.org/). However, there are several either paid or free options that you may use for your system's preparation (the system preparation will not be covered by this tutorial).
 
-Moreover, prior to the MD simulations that will be described in this tutorial, the ligand, *p-cymene* was docked into the binding pocket of 50 possible target proteins. The coordinates that will be used for the ligand are the output of the docking calculation. Nevertheless, this tutorial may be generalised for any protein-metal-cofactor-ligand complex that one wants to simulate.
+Moreover, prior to the MD simulations that will be described in this tutorial, the ligand, *p-cymene* was docked into the binding pocket of 50 possible target proteins. The coordinates that will be used for the ligand are the output of the docking calculation. Nevertheless, this tutorial may be generalized for any protein-metal-cofactor-ligand complex that one wants to simulate.
 
-For this tutorial, you will also need an access to a machine where you can run the calculations (most probably an efficient machine with a Linux environment or access to an HPC). The parametrization of the ligands and teh cofactors doesn't need powerful computational resources. In my case, it was perfromed on a WSL (Windows Subsystem for Linux) on my laptop where I had set up a conda environment with Antechamber and acpype. A very useful tutorial on how to set up this environment can be found [here](https://www.youtube.com/watch?v=OrfOZ1wmElo).
+For this tutorial, you will need an access to a machine where you can run the calculations (most probably an efficient machine with a Linux environment or access to an HPC). However, the parametrization of the ligands and the cofactors doesn't need powerful computational resources. In my case, it was perfromed on a WSL (Windows Subsystem for Linux) on my laptop where I had set up a conda environment with Antechamber and acpype. A very useful tutorial on how to set up this environment can be found [here](https://www.youtube.com/watch?v=OrfOZ1wmElo).
 
 ### Part 1: Prepare Topologies
 
@@ -33,13 +33,13 @@ First we will need to separate the protein from the ligand and the cofactor in d
 
 1. We will first prepare the cofactor topology. In order to do so we will use the acpype code that calls Antechamber and yields small organic molecules GAFF topologies in gromacs format. In our linux environment we will do:
 
-```
-acpype -i cofactor.mol2   
-```
-After a short while, a folder will have been created in your working directory, that will contain all the relevant files that you need for the cofactor's topology. The files that we will need are:
-* **cofactor_GMX.gro:** the gromacs structure file for the cofactor (in this case, the ATP analogue)
-* **cofactor_GMX.itp:** the gromacs topology file for the cofactor and
-* **posre_cofactor.itp:** the position restraints for the cofactor.
+  ```
+  acpype -i cofactor.mol2   
+  ```
+  After a short while, a folder will have been created in your working directory, that will contain all the relevant files that you need for the cofactor's topology. The files that we will need are:
+  * **cofactor_GMX.gro:** the gromacs structure file for the cofactor (in this case, the ATP analogue)
+  * **cofactor_GMX.itp:** the gromacs topology file for the cofactor and
+  * **posre_cofactor.itp:** the position restraints for the cofactor.
 
   We will follow the same procedure for the ligand:
   ```
