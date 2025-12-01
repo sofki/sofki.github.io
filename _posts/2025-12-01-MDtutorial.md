@@ -148,8 +148,8 @@ First we will need to separate the protein from the ligand and the cofactor in d
   ; Compound        #mols  
   Protein_chain_A     1
   Ion_chain_A2        1
-  <b>cofactor            1<\b><br>
-  <b>p-cymene            1<\b><br>
+  cofactor            1
+  p-cymene            1
 
    ```
 Finally, the altered topol.top file should look like this:
