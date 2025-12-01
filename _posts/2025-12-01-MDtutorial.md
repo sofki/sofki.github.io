@@ -73,9 +73,13 @@ First we will need to separate the protein from the ligand and the cofactor in d
    <img src="https://sofki.github.io//assets/img/p-cymene.png" alt="Centered image" width="400"/>
    </p>
 
-   After having copied the coordinates of both the cofactor and teh ligand, you will need to adjust the number of coordinates in the beginning of the complex.gro file. In our case it was: <br>
+   After having copied the coordinates of both the cofactor and the ligand, you will need to adjust the number of coordinates in the beginning of the complex.gro file. In our case it was: <br>
    4943 (the number in apo_processed.gro) + 44 (the number in cofactor.gro) + 24 (the number in the p-cymene.gro) = 5011 in the final complex.gro file
    
-5. Now we will have to build the topology of the system, topol.top, by combining the cofactor and ligand topologies and position restraints with those of our system. We will use ```#include``` statements inside the            topol.top file that was already created by the ```pdb2gmx``` command, in order to include the .itp files for our ligands, created by the acpype and antechamber. However, some manipulation needs to be made when including    several different topologies inside the topol.top file, because the ```#include``` statements must eb made with the **correct order**, and no *[atomtypes]* should be placed after any *[moleculetypes]* directive.
+5. Now we will have to build the topology of the system, topol.top, by combining the cofactor and ligand topologies and position restraints with those of our system. We will use ```#include``` statements inside the            topol.top file that was already created by the ```pdb2gmx``` command, in order to include the .itp files for our ligands, created by the acpype and antechamber. However, some manipulation needs to be made when including    several different topologies inside the topol.top file, because the ```#include``` statements must eb made with the **correct order**, and no *[ atomtypes ]* should be placed after any *[ moleculetype ]* directive. If      we have a look inside the cofactor.itp (renamed the cofactor_GMX.itp file oroduced by acpype for simplicity), we will see that it starts with an *[ atomtypes ]* and is followed with a *[ moleculetype ]* directive.
+
+   <p align="center">
+   <img src="https://sofki.github.io//assets/img/ligandtop.png" alt="Centered image" width="400"/>
+   </p>
   
   
