@@ -152,3 +152,8 @@ First we will need to separate the protein from the ligand and the cofactor in d
   <b>p-cymene            1<\b><br>
 
    ```
+Finally, the altered topol.top file should look like this:
+  
+   <p align="center">
+   <img src="https://sofki.github.io//assets/img/topology.png" alt="Centered image" width="400"/>
+   </p>
