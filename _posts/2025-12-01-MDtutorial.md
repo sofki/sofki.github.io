@@ -23,7 +23,7 @@ For this tutorial, you will need an access to a machine where you can run the ca
 
 ### Part 1: Prepare Topologies
 
-For this work, we will use the AMBER99SB forcefield for the protein and the General Amber ForceField (GAFF) for the ligands.
+For this work, we will use the AMBER99SB forcefield for the protein and the General Amber ForceField (GAFF) for the ligands, which is a forcefield compatible with the AMBER forcefields for proteins. In general, it is important not to mixa and match forcefields and to always use compatible forcefields for different types of molecules, such as proteins, nucleic acids, small molecules etc.
 
 First we will need to separate the protein from the ligand and the cofactor in different structure files. The protein that we will use is the MAP2K1 (PDB ID: 3EQC), complexed with an ATP-analogue (ATP-γ-S), Mg<sup>2+</sup> and an inhibitor. The AMBER99SB forcefield contains the parametrs for all standard aminoacids and the Mg<sup>2+</sup> ion. We will also need to keep the ATP analogue that is the physiological ligand that activates MAP2K1 but we will discard the inhibitor, as we will use our ligand, p-cymene, that was docked in the inhibitor's pocket. In order to proceed, we need to have in different files the *prepared* apo proten structure (apo.pdb) that contains only standard residues and Mg<sup>2+</sup>, the ATP-analogue in .mol2 form (cofactor.mol2) and our ligand - here, the output of our docking study - again in .mol2 form (p-cymene.mol2).
 
@@ -33,19 +33,25 @@ First we will need to separate the protein from the ligand and the cofactor in d
 
 1. We will first prepare the cofactor topology. In order to do so we will use the acpype code that calls Antechamber and yields small organic molecules GAFF topologies in gromacs format. In our linux environment we will do:
 
-  ```
-  acpype -i cofactor.mol2   
-  ```
-  After a short while, a folder will have been created in your working directory, that will contain all the relevant files that you need for the cofactor's topology. The files that we will need are:
-  * **cofactor_GMX.gro:** the gromacs structure file for the cofactor (in this case, the ATP analogue)
-  * **cofactor_GMX.itp:** the gromacs topology file for the cofactor and
-  * **posre_cofactor.itp:** the position restraints for the cofactor.
+    ```
+    acpype -i cofactor.mol2   
+    ```
+    After a short while, a folder will have been created in your working directory, that will contain all the relevant files that you need for the cofactor's topology. The files that we will need are:
+    * **cofactor_GMX.gro:** the gromacs structure file for the cofactor (in this case, the ATP analogue)
+    * **cofactor_GMX.itp:** the gromacs topology file for the cofactor and
+    * **posre_cofactor.itp:** the position restraints for the cofactor.
 
-  We will follow the same procedure for the ligand:
-  ```
-  acpype -i p-cymene.mol2   
-  ```
-  and we will get the equivalent structure, topologies and restraints files.
+    We will follow the same procedure for the ligand:
+    ```
+    acpype -i p-cymene.mol2   
+    ```
+    and we will get the equivalent structure, topologies and restraints files.
 
-2. 
+2. Then we will prepare the protein/Mg<sup>2+<\sup> topology using the standard gromacs procedure:
+     ```
+     gmx pdb2gmx -f apo.pdb -o apo_processed.gro -ter -ignh
+     ```
+     After the execution of the command we will be asked for the forcefield that we want to use (in this case the AMBER99SB forcefield), the water model (in this case TIP3P) and the type of termini that should be used in order to cap the system. In our case, the protein      was already capped through protein preparation and GROMACS recognised the cappings, so no question about termini was asked.
+
+3. 
 
