@@ -47,11 +47,11 @@ First we will need to separate the protein from the ligand and the cofactor in d
     ```
     and we will get the equivalent structure, topologies and restraints files.
 
-2. Then we will prepare the protein/Mg<sup>2+<\sup> topology using the standard gromacs procedure:
+2. Then we will prepare the protein/Mg<sup>2+</sup> topology using the standard gromacs procedure:
+   
      ```
      gmx pdb2gmx -f apo.pdb -o apo_processed.gro -ter -ignh
      ```
-     After the execution of the command we will be asked for the forcefield that we want to use (in this case the AMBER99SB forcefield), the water model (in this case TIP3P) and the type of termini that should be used in order to cap the system. In our case, the protein      was already capped through protein preparation and GROMACS recognised the cappings, so no question about termini was asked.
+     After the execution of the command we will be asked for the forcefield that we want to use (in this case the AMBER99SB forcefield), the water model (in this case TIP3P) and the type of termini that should be used in order to cap the system. In our case, the protein      was already capped through protein preparation and GROMACS recognised the cappings, so no question about termini was asked. If you omit -ignh that ignores hydrogens and places new ones, it is almost certain that you will get an error, as GROMACS will not recognise       the naming convention of your hydrogens. 
 
-3. 
-
+### Part 2: Combine structures and topologies
