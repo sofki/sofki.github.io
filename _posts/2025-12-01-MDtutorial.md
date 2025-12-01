@@ -76,10 +76,20 @@ First we will need to separate the protein from the ligand and the cofactor in d
    After having copied the coordinates of both the cofactor and the ligand, you will need to adjust the number of coordinates in the beginning of the complex.gro file. In our case it was: <br>
    4943 (the number in apo_processed.gro) + 44 (the number in cofactor.gro) + 24 (the number in the p-cymene.gro) = 5011 in the final complex.gro file
    
-5. Now we will have to build the topology of the system, topol.top, by combining the cofactor and ligand topologies and position restraints with those of our system. We will use ```#include``` statements inside the            topol.top file that was already created by the ```pdb2gmx``` command, in order to include the .itp files for our ligands, created by the acpype and antechamber. However, some manipulation needs to be made when including    several different topologies inside the topol.top file, because the ```#include``` statements must eb made with the **correct order**, and no *[ atomtypes ]* should be placed after any *[ moleculetype ]* directive. If      we have a look inside the cofactor.itp (renamed the cofactor_GMX.itp file oroduced by acpype for simplicity), we will see that it starts with an *[ atomtypes ]* and is followed with a *[ moleculetype ]* directive.
+5. Now we will have to build the topology of the system, topol.top, by combining the cofactor and ligand topologies and position restraints with those of our system. We will use ```#include``` statements inside the            topol.top file that was already created by the ```pdb2gmx``` command, in order to include the .itp files for our ligands, created by the acpype and antechamber. However, some manipulation needs to be made when including    several different topologies inside the topol.top file, because the ```#include``` statements must eb made with the **correct order**, and no *[ atomtypes ]* should be placed after any *[ moleculetype ]* directive. If      we have a look inside the cofactor_GMX.itp, we will see that it starts with an *[ atomtypes ]* and is followed with a *[ moleculetype ]* directive.
 
    <p align="center">
    <img src="https://sofki.github.io//assets/img/ligandtop.png" alt="Centered image" width="400"/>
    </p>
   
-  
+    Exactly the same happens inside the p-cymene_GMX.itp file. Thus, if we consecutively include the cofactor and ligand topologies inside the topol.top file like that:
+
+    ```
+    ; Include ligands topology
+    #include "cofactor_GMX.itp"
+    #include "p-cymene_GMX.itp"
+    ```
+
+    we will inevitably have an *[ atomtypes ]* directive (that of p-cymene_GMX.itp) be placed after the  *[ moleculetype ]* of the cofactor_GMX.itp and this will result into a [GROMACS error]               (https://manual.gromacs.org/2024.0/user-guide/run-time-errors.html#invalid-order-for-directive-xxx).
+
+   In order to avoid this problem we will do a trick. We will copy the cofactor_GMX.itp to a file named cofactor.itp and we will keep only what is before the *[ moleculetype ]* in the original .itp file, in this case it is only the *[ atomtypes ]* directive. Then, we will rename the cofactor_GMX.itp to cofactor_moleculetypes.itp and we will keep only whatever is from the *[ moleculetype ]* directive and after. Practically, we will have divided the cofactor_GMX.itp into two different files. We will do exactly the same with the p-cymene_GMX.itp.
