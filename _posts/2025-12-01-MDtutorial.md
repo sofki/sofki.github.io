@@ -28,7 +28,7 @@ For this work, we will use the AMBER99SB forcefield for the protein and the Gene
 First we will need to separate the protein from the ligand and the cofactor in different structure files. The protein that we will use is the MAP2K1 (PDB ID: 3EQC), complexed with an ATP-analogue (ATP-γ-S), Mg<sup>2+</sup> and an inhibitor. The AMBER99SB forcefield contains the parametrs for all standard aminoacids and the Mg<sup>2+</sup> ion. We will also need to keep the ATP analogue that is the physiological ligand that activates MAP2K1 but we will discard the inhibitor, as we will use our ligand, p-cymene, that was docked in the inhibitor's pocket. In order to proceed, we need to have in different files the *prepared* apo proten structure (apo.pdb) that contains only standard residues and Mg<sup>2+</sup>, the ATP-analogue in .mol2 form (cofactor.mol2) and our ligand - here, the output of our docking study - again in .mol2 form (p-cymene.mol2).
 
 <p align="center">
-  <img src="your-image-url.png" alt="Centered image" width="400"/>
+  <img src="https://sofki.github.io//assets/img/3EQC.jpg" alt="Centered image" width="400"/>
 </p>
 
 1. We will first prepare the cofactor topology. In order to do so we will use the acpype code that calls Antechamber and yields small organic molecules GAFF topologies in gromacs format. In our linux environment we will do:
