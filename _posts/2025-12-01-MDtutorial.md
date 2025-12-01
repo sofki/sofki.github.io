@@ -52,7 +52,7 @@ First we will need to separate the protein from the ligand and the cofactor in d
      ```
      gmx pdb2gmx -f apo.pdb -o apo_processed.gro -ter -ignh
      ```
-     After the execution of the command we will be asked for the forcefield that we want to use (in this case the AMBER99SB forcefield), the water model (in this case TIP3P) and the type of termini that should be used in order to cap the system. In our case, the protein      was already capped through protein preparation and GROMACS recognised the cappings, so no question about termini was asked. If you omit -ignh that ignores hydrogens and places new ones, it is almost certain that you will get an error, as GROMACS will not recognise       the naming convention of your hydrogens. 
+     After the execution of the command we will be asked for the forcefield that we want to use (in this case the AMBER99SB forcefield), the water model (in this case TIP3P) and the type of termini that should be used in        order to cap the system. In our case, the protein      was already capped through protein preparation and GROMACS recognised the cappings, so no question about termini was asked. If you omit -ignh that ignores              hydrogens and places new ones, it is almost certain that you will get an error, as GROMACS will not recognise the naming convention of your hydrogens. 
 
 ### Part 2: Combine structures and topologies
 
@@ -72,6 +72,10 @@ First we will need to separate the protein from the ligand and the cofactor in d
    <p align="center">
    <img src="https://sofki.github.io//assets/img/p-cymene.png" alt="Centered image" width="400"/>
    </p>
+
+   After having copied the coordinates of both the cofactor and teh ligand, you will need to adjust the number of coordinates in the beginning of the complex.gro file. In our case it was: <br>
+   4943 (the number in apo_processed.gro) + 44 (the number in cofactor.gro) + 24 (the number in the p-cymene.gro) = 5011 in the final complex.gro file
    
+5. Now we will have to build the topology of the system, topol.top, by combining the cofactor and ligand topologies and position restraints with those of our system. We will use ```#include``` statements inside the            topol.top file that was already created by the ```pdb2gmx``` command, in order to include the .itp files for our ligands, created by the acpype and antechamber. However, some manipulation needs to be made when including    several different topologies inside the topol.top file, because the ```#include``` statements must eb made with the **correct order**, and no *[atomtypes]* should be placed after any *[moleculetypes]* directive.
   
   
