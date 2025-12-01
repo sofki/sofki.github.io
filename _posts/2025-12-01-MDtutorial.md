@@ -32,6 +32,7 @@ First we will need to separate the protein from the ligand and the cofactor in d
 </p>
 
 1. We will first prepare the cofactor topology. In order to do so we will use the acpype code that calls Antechamber and yields small organic molecules GAFF topologies in gromacs format. In our linux environment we will do:
+
 ```
 acpype -i cofactor.mol2   
 ```
@@ -40,11 +41,11 @@ After a short while, a folder will have been created in your working directory, 
 * **cofactor_GMX.itp:** the gromacs topology file for the cofactor and
 * **posre_cofactor.itp:** the position restraints for the cofactor.
 
-We will follow the same procedure for the ligand:
-```
-acpype -i p-cymene.mol2   
-```
-and we will get the equivalent structure, topologies and restraints files.
+  We will follow the same procedure for the ligand:
+  ```
+  acpype -i p-cymene.mol2   
+  ```
+  and we will get the equivalent structure, topologies and restraints files.
 
 2. 
 
