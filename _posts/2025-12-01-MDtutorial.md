@@ -19,3 +19,5 @@ For this project, I used the [Enalos Asclepios](https://novamechanics.com/produc
 
 Moreover, prior to the MD simulations that will be described in this tutorial, the ligand, *p-cymene* was docked into the binding pocket of 50 possible target proteins. The coordinates that will be used for the ligand are the output of the docking calculation. Nevertheless, this tutorial may be generalised for any protein-metal-cofactor-ligand complex that one wants to simulate.
 
+For this tutorial, you will also need an access to a machine where you can run the calculations (most probably an efficient machine with a Linux environment or access to an HPC). The parametrization of the ligands and teh cofactors doesn't need powerful computational resources. In my case, it was perfromed on a WSL (Windows Subsystem for Linux) on my laptop where I had set up a conda environment with Antechamber and acpype. A very useful tutorial on how to set up this environment can be found [here](https://www.youtube.com/watch?v=OrfOZ1wmElo).
+
