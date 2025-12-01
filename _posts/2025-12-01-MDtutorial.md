@@ -1,11 +1,11 @@
 ---
 layout: post
-title: Plotting HOMO and LUMO with Multiwfn
-subtitle: A step by step tutorial
+title: Protein-Ligand complex MD tutorial
+subtitle: A GROMACS tutorial for building a complex system with a metalloproetein, a cofactor and a ligand 
 cover-img: 
 thumbnail-img: https://sofki.github.io//assets/img/sobereva.jpeg
 share-img: https://sofki.github.io//assets/img/sobereva.jpeg
-tags: [tutorials, MultiWfn, NCI, AIM]
+tags: [tutorials, GROMACS. MD]
 author: Sofia Kiriakidi
 ---
 
