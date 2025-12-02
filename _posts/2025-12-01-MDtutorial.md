@@ -56,7 +56,7 @@ First we will need to separate the protein from the ligand and the cofactor in d
 
 ### Part 2: Combine structures and topologies
 
-3. The next step is to combine the structures in a single .gro file for your complex. Copy the apo_processed.gro into a new file called complex.gro:
+1. The next step is to combine the structures in a single .gro file for your complex. Copy the apo_processed.gro into a new file called complex.gro:
 
    ```
    cp apo_processed.gro complex.gro
@@ -76,7 +76,7 @@ First we will need to separate the protein from the ligand and the cofactor in d
    After having copied the coordinates of both the cofactor and the ligand, you will need to adjust the number of coordinates in the beginning of the complex.gro file. In our case it was: <br>
    4943 (the number in apo_processed.gro) + 44 (the number in cofactor.gro) + 24 (the number in the p-cymene.gro) = 5011 in the final complex.gro file
    
-4. Now we will have to build the topology of the system, topol.top, by combining the cofactor and ligand topologies and position restraints with those of our system. We will use ```#include``` statements inside the        topol.top file that was already created by the ```pdb2gmx``` command, in order to include the .itp files for our ligands, created by the acpype and antechamber. However, some manipulation needs to be made when including several different topologies inside the topol.top file, because the ```#include``` statements must be made with the **correct order**, and no *[ atomtypes ]* should be placed after any *[ moleculetype ]* directive. If we have a look inside the cofactor_GMX.itp, we will see that it starts with an *[ atomtypes ]* and is followed with a *[ moleculetype ]* directive.
+2. Now we will have to build the topology of the system, topol.top, by combining the cofactor and ligand topologies and position restraints with those of our system. We will use ```#include``` statements inside the        topol.top file that was already created by the ```pdb2gmx``` command, in order to include the .itp files for our ligands, created by the acpype and antechamber. However, some manipulation needs to be made when including several different topologies inside the topol.top file, because the ```#include``` statements must be made with the **correct order**, and no *[ atomtypes ]* should be placed after any *[ moleculetype ]* directive. If we have a look inside the cofactor_GMX.itp, we will see that it starts with an *[ atomtypes ]* and is followed with a *[ moleculetype ]* directive.
 
    <p align="center">
    <img src="https://sofki.github.io//assets/img/ligandtop.png" alt="Centered image" width="400"/>
@@ -103,7 +103,7 @@ First we will need to separate the protein from the ligand and the cofactor in d
     ```
   It is wise to respect the order that the different molecule types appear in your complex.gro file when building topologies, in order to avoid future errors. Here we copied first the cofactor and thεn p-cymene after the protein inside the complex.gro file and in the topology we did the same; we first included the atomtypes for the cofactor and then for p-cymene using include statements. 
 
-5. For the next step, we will have to include the rest of the cofactor's and ligand's topology inside our central topol.top file. To do so, we will start with the cofactor, and right after the ```; Include ligands topology``` block, we will include the molecule types for the co-factor:
+3. For the next step, we will have to include the rest of the cofactor's and ligand's topology inside our central topol.top file. To do so, we will start with the cofactor, and right after the ```; Include ligands topology``` block, we will include the molecule types for the co-factor:
 
    ```
    ;Include Molecule types for co-factor
@@ -121,16 +121,16 @@ First we will need to separate the protein from the ligand and the cofactor in d
     ```
     This chunk of code means that if -POSRES_LIG1 appears inside a gromacs protocol file (.mdp), the cofactor will be restarined. After finishing with the topology and position restrains of the cofactor, we will do the   same for the ligand:
 
-  ```
-  ;Include Molecule types for p-cymene
-  #include "p-cymene_moleculetypes.itp"
+    ```
+    ;Include Molecule types for p-cymene
+    #include "p-cymene_moleculetypes.itp"
 
-  ; p-cymene pos restraints
-  #ifdef POSRES_LIG2
-  #include "posre_p-cymene.itp"
-  #endif
+    ; p-cymene pos restraints
+    #ifdef POSRES_LIG2
+    #include "posre_p-cymene.itp"
+    #endif
 
-  ```
+    ```
   After that, the protein topology should appear in the topol.top file, as created by the ```pdb2gmx``` command. In our case, GROMACS treated the protein as one chain and the Mg<sup>2+</sup> ion as another chain, so the next block in our topol.top file reads:
 
     ```
@@ -141,7 +141,7 @@ First we will need to separate the protein from the ligand and the cofactor in d
     ```
     and then the water and ions topologies follow.
 
-6. In the end of our topol.top file we will find the *[ molecules ]* directive. It will start with one moelcule of our protein chain A (the protein), then one moelcule of our ion chain 2 will follow (the Mg<sup>2+</sup> ion) and then we will have to manually add the cofactor and the ligand:
+4. In the end of our topol.top file we will find the *[ molecules ]* directive. It will start with one moelcule of our protein chain A (the protein), then one moelcule of our ion chain 2 will follow (the Mg<sup>2+</sup> ion) and then we will have to manually add the cofactor and the ligand:
 
    ```
    [ molecules ]
