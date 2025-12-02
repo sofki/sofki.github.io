@@ -9,11 +9,11 @@ tags: [tutorials, GROMACS, MD]
 author: Sofia Kiriakidi
 ---
 
-Building a complex system containing a protein (especially a metalloprotein) that contains small molecules that act aaas co-factors and a docked ligand can eb a very challenging procedure. In order to make things easier a created this tutorial using only free and open access resources, such as [Antechamber](https://ambermd.org/antechamber/ac.html), [acpype](https://alanwilter.github.io/acpype/) and [GROMACS](https://www.gromacs.org/).
+Building a complex system containing a protein (especially a metalloprotein) that contains small molecules that act as co-factors and a docked ligand can be a very challenging procedure. In order to make things easier I created this tutorial using only free and open access resources, such as [Antechamber](https://ambermd.org/antechamber/ac.html), [acpype](https://alanwilter.github.io/acpype/) and [GROMACS](https://www.gromacs.org/).
 
 This tutorial aspires to help each user that has to perform this difficult task in the future and therefore serve the community as a free educational resource. Nonetheless, it serves an additional role. It can be referenced as a public protocol for the system preparations of the short MD simulations that followed the docking of p-cymene into each target protein to assess the stability of the protein-ligand complex, for the **MSCA**-funded project [**_Waste2Drug_**](https://sofki.github.io/waste-2-drug/). In this way, the reproducibility of the results and the [Open Science](https://rea.ec.europa.eu/open-science_en) principles of the project is ensured.
 
-This tutorial assumes that you already have a *prepared* protein and ligand file. Crystal structures deposited in RCSB may have a lot of problems, such as missing hydrogens, missing side-chains, even whole missing residues and protein loops. Moreover, the specific pH of the system that you want to simulate should be taken into account for the protonation of specific residues (such as histidines). Similar manipulations (especially taking care of the protonation) should be considered also for the ligand (and any cofactors that might be present and *important* for your system). Finally, anything present in the opdb that it is not relevant for your simulation (such as cocrystallized water molecules or additives) should be removed from the final, *prepared* structure.
+This tutorial assumes that you already have a *prepared* protein and ligand file. Crystal structures deposited in RCSB may have a lot of problems, such as missing hydrogens, missing side-chains, even whole missing residues and protein loops. Moreover, the specific pH of the system that you want to simulate should be taken into account for the protonation of specific residues (such as histidines). Similar manipulations (especially taking care of the protonation) should be considered also for the ligand (and any cofactors that might be present and *important* for your system). Finally, anything present in the opdb that it is not relevant for your simulation (such as cocrystallized water molecules in some cases or additives) should be removed from the final, *prepared* structure.
 
 For this project, I used the [Enalos Asclepios](https://novamechanics.com/products/asclepios-knime-nodes/) KNIME tools, developed by [NovaMechanics Ltd](https://novamechanics.eu/) for the protein and ligand preparation. An alternative that is free for academic use is [CHARMM-GUI](https://www.charmm-gui.org/). However, there are several either paid or free options that you may use for your system's preparation (the system preparation will not be covered by this tutorial).
 
@@ -23,9 +23,9 @@ For this tutorial, you will need an access to a machine where you can run the ca
 
 ### Part 1: Prepare Topologies
 
-For this work, we will use the AMBER99SB forcefield for the protein and the General Amber ForceField (GAFF) for the ligands, which is a forcefield compatible with the AMBER forcefields for proteins. In general, it is important not to mixa and match forcefields and to always use compatible forcefields for different types of molecules, such as proteins, nucleic acids, small molecules etc.
+For this work, we will use the AMBER99SB forcefield for the protein and the General Amber ForceField (GAFF) for the ligands, which is a forcefield compatible with the AMBER forcefields for proteins. In general, it is important not to mix and match forcefields and to always use compatible forcefields for different types of molecules, such as proteins, nucleic acids, small molecules etc.
 
-First we will need to separate the protein from the ligand and the cofactor in different structure files. The protein that we will use is the MAP2K1 (PDB ID: 3EQC), complexed with an ATP-analogue (ATP-γ-S), Mg<sup>2+</sup> and an inhibitor. The AMBER99SB forcefield contains the parametrs for all standard aminoacids and the Mg<sup>2+</sup> ion. We will also need to keep the ATP analogue that is the physiological ligand that activates MAP2K1 but we will discard the inhibitor, as we will use our ligand, p-cymene, that was docked in the inhibitor's pocket. In order to proceed, we need to have in different files the *prepared* apo proten structure (apo.pdb) that contains only standard residues and Mg<sup>2+</sup>, the ATP-analogue in .mol2 form (cofactor.mol2) and our ligand - here, the output of our docking study - again in .mol2 form (p-cymene.mol2).
+First we will need to separate the protein from the ligand and the cofactor in different structure files. The protein that we will use is the MAP2K1 (PDB ID: 3EQC), complexed with an ATP-analogue (ATP-γ-S), Mg<sup>2+</sup> and an inhibitor. The AMBER99SB forcefield contains the parameters for all standard aminoacids and the Mg<sup>2+</sup> ion. We will also need to keep the ATP analogue that is the physiological ligand that activates MAP2K1 but we will discard the inhibitor, as we will use our ligand, p-cymene, that was docked in the inhibitor's pocket. In order to proceed, we need to have in different files the *prepared* apo proten structure (apo.pdb) that contains only standard residues and Mg<sup>2+</sup>, the ATP-analogue in .mol2 form (cofactor.mol2) and our ligand - here, the output of our docking study - again in .mol2 form (p-cymene.mol2).
 
 <p align="center">
   <img src="https://sofki.github.io//assets/img/3EQC.jpg" alt="Centered image" width="400"/>
@@ -119,7 +119,7 @@ First we will need to separate the protein from the ligand and the cofactor in d
     #endif
 
     ```
-    This chunk of code means that if -POSRES_LIG1 appears inside a gromacs protocol file (.mdp), the cofactor will be restarined. After finishing with the topology and position restrains of the cofactor, we will do the   same for the ligand:
+    This chunk of code means that if -POSRES_LIG1 appears inside a gromacs protocol file (.mdp), the cofactor will be restarined. This is useful for the equi8libration process that will follow after the system setup. After finishing with the topology and position restrains of the cofactor, we will do the same for the ligand:
 
     ```
     ;Include Molecule types for p-cymene
@@ -157,3 +157,7 @@ Finally, the altered topol.top file should look like this:
    <p align="center">
    <img src="https://sofki.github.io//assets/img/topology.png" alt="Centered image" width="600"/>
    </p>
+
+Now that the system is built you can follow the regular procedure for MD simulations with GROMACS. For example, you may follow [this](http://www.mdtutorials.com/gmx/complex/03_solvate.html) tutorial provided by the [Lemkul Lab](https://www.thelemkullab.com/), from the Solvation part and on.
+
+It is very possible that you will encounter an error due to "too many warnings" when you perform the "Adding Ions" step. You should carefully examinate the warnings and check if they are harmless. If they are, you might suppress the error by adding ```-maxwarn 1``` (or 2 etc) to your gmx commands. For example, in my case the same type of atoms was defined two times, both in the topology of the cofactor and in that of p-cymene. Since after carefully checking the topologies I confirmed that they are indeed the same type of atom and overriding the second definition would not cause a problem, I chose to suppress the error by increasing the tolerance in the maximum warnings.
