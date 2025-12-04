@@ -1,23 +1,24 @@
 document.addEventListener('DOMContentLoaded', function() {
-  const shares = document.querySelectorAll('.share-links li');
-  shares.forEach((li, i) => {
-    if (i === shares.length - 1) {  // Add after last share button
-      const blueskyBtn = document.createElement('li');
-      blueskyBtn.className = 'list-inline-item';
-      blueskyBtn.innerHTML = `
-        <a href="javascript:void(0)" onclick="shareToBluesky()" title="Share on Bluesky">
-          <span class="fa-stack fa-lg">
-            <i class="fas fa-circle fa-stack-2x"></i>
-            <i class="fab fa-bluesky fa-stack-1x fa-inverse"></i>  <!-- or custom SVG -->
-          </span>
-        </a>`;
-      li.parentNode.insertBefore(blueskyBtn, li.nextSibling);
-    }
-  });
+  // Target the share container correctly
+  const shareContainer = document.querySelector('.share');
+  if (shareContainer && shareContainer.querySelector('ul')) {
+    const ul = shareContainer.querySelector('ul');
+    const blueskyLi = document.createElement('li');
+    blueskyLi.className = 'list-inline-item';
+    blueskyLi.innerHTML = `
+      <a href="#" onclick="shareToBluesky();return false;" title="Share on Bluesky">
+        <span class="fa-stack fa-lg">
+          <i class="fas fa-circle fa-stack-2x" style="color: #1D9BF0;"></i>
+          <i class="fas fa-cloud fa-stack-1x fa-inverse"></i>
+        </span>
+        <span class="sr-only">Share on Bluesky</span>
+      </a>`;
+    ul.appendChild(blueskyLi);
+  }
 });
 
 function shareToBluesky() {
   const url = window.location.href;
-  const title = document.title;
+  const title = document.title.split(' - ')[0];  // Clean title
   window.open(`https://bsky.app/intent/compose?text=${encodeURIComponent(title + ' ' + url)}`, '_blank');
 }
