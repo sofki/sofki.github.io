@@ -1,8 +1,9 @@
 ---
 layout: page
-title: Conferences
+title: Invited Talks
 ---
 
 
 * **“Unraveling Reaction Mechanisms with ORCA: Tools, Techniques, and Applications”**, Wednesday, July 2, 2024 @12:00 <br>
  📍 Giannakopoulos Seminar Room, 5th Floor,  Physical Chemistry Lab., Dept. of Chemistry, National and Kapodistrian University of Athens
+
