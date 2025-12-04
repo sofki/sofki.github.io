@@ -27,6 +27,12 @@
   </li>
   {%- endif -%}
 
+  <li>
+  <a href="javascript:shareToBluesky('{{ page.url | replace:'index.html','' | absolute_url }}', '{{ page.title | escape }}')" title="Share on Bluesky">
+    <svg><!-- Bluesky SVG icon here --></svg>
+  </a>
+</li>
+
   {%- if network[0] == "calendly" -%}
   <li class="list-inline-item">
     <a href="https://calendly.com/{{ network[1] }}" title="Schedule a meeting with me">
