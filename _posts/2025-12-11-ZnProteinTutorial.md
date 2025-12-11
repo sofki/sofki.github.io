@@ -22,7 +22,7 @@ So, what you need to do first is to download the gromacs parameter files from th
 If you open the README file you will be directed to the corresponding gromacs [page](https://manual.gromacs.org/current/how-to/topology.html) that explains how to add an external residue to a local copy of a forcefield. We will take this process step by step.
 
 1. First, you will need to create a local copy of an amber forcefield, copying it from your gromacs directory to your working folder.
-  > [!Attention]
+  > [!CAUTION]
   > If you work on an HPC, it is better to do this manipulations with a conda version of gromacs. This is suggested because although you will be able to copy the forcefield folder from where it is loaded in the HPC system to your working directory, the residuetypes.dat will be read from where all the forcefields reside, and most probably, you won't be able to change it in your HPC system. However, if you create a conda environment with gromacs installed, you may directly change this file. This step is crucial for adding new residue types.
 
 2. 
