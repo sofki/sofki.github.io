@@ -22,7 +22,7 @@ So, what you need to do first is to download the gromacs parameter files from th
 If you open the README file you will be directed to the corresponding gromacs [page](https://manual.gromacs.org/current/how-to/topology.html) that explains how to add an external residue to a local copy of a forcefield. We will take this process step by step.
 
 1. First, you will need to create a local copy of an amber forcefield, copying it from your gromacs directory to your working folder.
-> [!WARNING]
-> This requires immediate attention: Critical step ahead.
+  > [!WARNING]
+  > This requires immediate attention: Critical step ahead.
 
 2. 
