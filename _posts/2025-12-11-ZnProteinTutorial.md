@@ -35,15 +35,22 @@ If you open the README file you will be directed to the corresponding gromacs [p
    <p align="center">
        <img src="https://sofki.github.io//assets/img/ffnonbonded.png" alt="Centered image" width="400"/>
    </p>
+   
 3. In the aminoacids.rtp ignore the first part illustrated in the picture below, since it already exists in your local aminoacids.rtp file and multiple entries might cause errors.
    <p align="center">
        <img src="https://sofki.github.io//assets/img/aminortp.png" alt="Centered image" width="400"/>
    </p>
+   
 4. Do the same for the rest of the files (``ffnonbonded.itp, ffbonded.itp, atomtypes.atp, aminoacids.rtp, aminoacids.hdb``). For the ``residuetypes.dat`` you will have to change the file in your gromacs top directory (it doesn't work with a local copy).
+
 5. After finishing the first AMBER forcefield upgrade, containing parameters for HIS and CYS, do the same procedure with the second one, containing parametrs for ASP and GLU. 
+
 6. Now it's time to process your pdb file in order to make it work with ``pdb2gmx``. First you must investigate your file with a pdb viewer (I am using the open source version of [Pymol](https://anaconda.org/channels/conda-forge/packages/pymol-open-source/overview) ) and check which residues are bound to Zn. Take notice of the numbers of the relevant CYS, HIS, ASP and GLU.
+
 7. Next, open your pdb with a text editor and change those residues accordingly: rename CYS to CYZ, HIS to HDZ or HEZ, depending on its protonation (HDZ for HID and HEZ for HIE), GLU to GLZ and ASP to ASZ. Select the oxygen interacting with the zinc ion and rename it to OZ.
+
 8. After changing the interacting residues accordingly, locate the Zn ions on your pdb file. Make sure that their residue is plain ZN and not ZNXX (in my case it was named ZN10 and I got an error for uknown residue).
+
 9. Another issue I encountered, is that if your ZN residues are randomly placed inside your pdb, gromacs fails during the ``pdb2gmx`` process with the following error:
     ```
     Fatal error:
@@ -56,6 +63,13 @@ not have the same chain ID as the adjacent protein chain since it's a separate
 molecule.
 
     ```
+
+10. A way to bypass this problem is by reordering your pdb file. In my case. I also had a ligand (resname UNK), so I decided to put all the ZN ions in the end of the protein just before the ligand. To do so, execute the following commands. The openbabel package is needed in order to reorder and renumber the file.
+```
+grep 'Zn' system.pdb > Zn.pdb && grep -v 'Zn' system.pdb > system_no_Zn.tmp && mv system_no_Zn.tmp system.pdb
+awk '/PATTERN/ && !done { system("cat Zn.pdb"); done=1 } { print }' system.pdb > systemZn.pdb
+obabel -ipdb systemZn.pdb -opdb -O final.pdb
+```
 11. 
 
 
