@@ -16,7 +16,7 @@ In this work we will use the work of [Marina Macchiagodena](https://orcid.org/00
 So, what you need to do first is to download the gromacs parameter files from the supporting info of the two papers concerning Zn mentioned above. If you decompress the .zip file, you will se a list like that below:
 
 <p align="center">
-  <img src="https://sofki.github.io//assets/img/zip.png" alt="Centered image" width="400"/>
+  <img src="https://sofki.github.io//assets/img/zip.png" alt="Centered image" width="200"/>
 </p>
 
 If you open the README file you will be directed to the corresponding gromacs [page](https://manual.gromacs.org/current/how-to/topology.html) that explains how to add an external residue to a local copy of a forcefield. We will take this process step by step.
