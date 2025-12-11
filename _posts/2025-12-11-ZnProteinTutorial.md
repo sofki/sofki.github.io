@@ -32,13 +32,19 @@ If you open the README file you will be directed to the corresponding gromacs [p
   and the location of your conda environment will be printed. Go there with ``cd`` and then search for the gromacs/top directory, most probably inside the share folder of your environment.
 
 2. Then, you simply need to copy the contents of each file listed in the picture above to the relevant file in your local copy of the amber forcefield. For example, you will copy this from the ffnonbonded.itp of the .zip file you downloaded and copy it to the end of the ffnonbonded.itp of your local amber forcefield. My suggestion is to delete the Zn entry, since it already exists in your amber forcefield and it might trigger a warning.
-
-  <p align="center">
+<p align="center">
     <img src="https://sofki.github.io//assets/img/ffnonbonded.png" alt="Centered image" width="400"/>
-  </p>
+</p>
 
 3. In the aminoacids.rtp ignore the first part illustrated in the picture below, since it already exists in your local aminoacids.rtp file and multiple entries might cause errors.
-  <p align="center">
+<p align="center">
     <img src="https://sofki.github.io//assets/img/aminortp.png" alt="Centered image" width="400"/>
-  </p>
-4. Do the same for the rest of the files (``ffnonbonded.itp, ffbonded.itp, atomtypes.atp, aminoacids.rtp, aminoacids.hdb``). For the ``residuetypes.dat`` you will have to change the file in your gromacs top directory (it doesn;t work with a local copy).
+</p>
+
+4. Do the same for the rest of the files (``ffnonbonded.itp, ffbonded.itp, atomtypes.atp, aminoacids.rtp, aminoacids.hdb``). For the ``residuetypes.dat`` you will have to change the file in your gromacs top directory (it doesn't work with a local copy).
+
+5. fgdf
+6.  
+
+
+  
