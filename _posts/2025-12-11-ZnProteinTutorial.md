@@ -31,9 +31,9 @@ If you open the README file you will be directed to the corresponding gromacs [p
   ```
   and the location of your conda environment will be printed. Go there with ``cd`` and then search for the gromacs/top directory, most probably inside the share folder of your environment.
 
-2. Then, you simply need to copy the contents of each file listed in the picture above to the relevant file in your local copy of the amber forcefield. For example, you will copy this:
+2. Then, you simply need to copy the contents of each file listed in the picture above to the relevant file in your local copy of the amber forcefield. For example, you will copy this from the ffnonbonded.itp of the .zip file you downloaded and copy it to the end of the ffnonbonded.itp of your local amber forcefield. My suggestion is to delete the Zn entry, since it already exists in your amber forcefield and it might trigger a warning.
 
   <p align="center">
     <img src="https://sofki.github.io//assets/img/ffnonbonded.png" alt="Centered image" width="400"/>
   </p>
-    from the ffnonbonded.itp of the .zip file you downloaded and copy it to the end of the ffnonbonded.itp of your local amber forcefield. My suggestion is to delete the Zn entry, since it already exists in your amber          forcefield and it might trigger a warning.
+    
