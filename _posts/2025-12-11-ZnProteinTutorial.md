@@ -25,9 +25,15 @@ If you open the README file you will be directed to the corresponding gromacs [p
     <div style="background-color: #f8f9fa; border-left: 4px solid #d73a49; padding: 12px; margin: 16px 0; border-radius: 4px;">
       <strong style="color: #d73a49;">⚠️ Attention:</strong> If you work on an HPC, it is better to do this manipulations with a conda version of gromacs. This is suggested because although you will be able to copy the forcefield folder from where it is loaded in the HPC system to your working directory, the residuetypes.dat will be read from where all the forcefields reside, and most probably, you won't be able to change it in your HPC system. However, if you create a conda environment with gromacs installed, you may directly change this file. This step is crucial for adding new residue types.
     </div>
-
+  The forcefields should be located somewhere in the share (or lib or bin) folder of the conda environment that you used. In order toeasily find it do:
+  ```
+    echo "$CONDA_PREFIX"
+  ```
+  and the location of your conda environment will be printed. Go there and then search for the gromacs/top directory, most probably inside the share folder of your environment.
 2. Then, you simply need to copy the contents of each file listed in the picture above to the relevant file in your local copy of the amber forcefield. For example, you will copy this:
 
-<p align="center">
-  <img src="https://sofki.github.io//assets/img/ffnonbonded.png" alt="Centered image" width="200"/>
-</p>
+    <p align="center">
+      <img src="https://sofki.github.io//assets/img/ffnonbonded.png" alt="Centered image" width="400"/>
+    </p>
+  
+  from the ffnonbonded.itp of the .zip file you downloaded and copy it to the end of the ffnonbonded.itp of your local amber forcefield.
