@@ -41,4 +41,4 @@ If you open the README file you will be directed to the corresponding gromacs [p
   <p align="center">
     <img src="https://sofki.github.io//assets/img/aminortp.png" alt="Centered image" width="400"/>
   </p>
-4. 
+4. Do the same for the rest of the files (``ffnonbonded.itp, ffbonded.itp, atomtypes.atp, aminoacids.rtp, aminoacids.hdb``). For the ``residuetypes.dat`` you will have to change the file in your gromacs top directory (it doesn;t work with a local copy).
