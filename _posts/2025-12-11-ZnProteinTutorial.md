@@ -9,7 +9,7 @@ tags: [tutorials, GROMACS, MD, AMBER forcefield]
 author: Sofia Kiriakidi
 ---
 
-Working with metal-containing proteins is often very complicated, especially when no standard focefields are available for treating this specific type of metal and most importantly, the protein residues that are bonded to it. Luckily, a group of researchers form Italy published a modified AMBER forcefield that was optimized specifically for Zn proteins, [first](https://pubs.acs.org/doi/10.1021/acs.jcim.9b00407?ref=recommended) treating HIS and CYS zinc-binding residues and [then](https://pubs.acs.org/doi/10.1021/acsomega.0c01337?ref=recommended) extending it also for ASp and GLU.
+Working with metal-containing proteins is often very complicated, especially when no standard focefields are available for treating this specific type of metal and most importantly, the protein residues that are bonded to it. Luckily, a group of researchers form Italy published a modified AMBER forcefield that was optimized specifically for Zn proteins, [first](https://pubs.acs.org/doi/10.1021/acs.jcim.9b00407?ref=recommended) treating HIS and CYS zinc-binding residues and [then](https://pubs.acs.org/doi/10.1021/acsomega.0c01337?ref=recommended) extending it also for ASP and GLU.
 
 In this work we will use the work of [Marina Macchiagodena](https://orcid.org/0000-0002-3151-718X) _et al._ in order to prepare a system for MD simulation, containing Zn and a ligand. They have also worked on cadmium-containing proteins, more details you can find [here](https://onlinelibrary.wiley.com/doi/10.1002/jcc.70154).
 
@@ -40,9 +40,24 @@ If you open the README file you will be directed to the corresponding gromacs [p
        <img src="https://sofki.github.io//assets/img/aminortp.png" alt="Centered image" width="400"/>
    </p>
 4. Do the same for the rest of the files (``ffnonbonded.itp, ffbonded.itp, atomtypes.atp, aminoacids.rtp, aminoacids.hdb``). For the ``residuetypes.dat`` you will have to change the file in your gromacs top directory (it doesn't work with a local copy).
+5. After finishing the first AMBER forcefield upgrade, containing parameters for HIS and CYS, do the same procedure with the second one, containing parametrs for ASP and GLU. 
+6. Now it's time to process your pdb file in order to make it work with ``pdb2gmx``. First you must investigate your file with a pdb viewer (I am using the open source version of [Pymol](https://anaconda.org/channels/conda-forge/packages/pymol-open-source/overview) ) and check which residues are bound to Zn. Take notice of the numbers of the relevant CYS, HIS, ASP and GLU.
+7. Next, open your pdb with a text editor and change those residues accordingly: rename CYS to CYZ, HIS to HDZ or HEZ, depending on its protonation (HDZ for HID and HEZ for HIE), GLU to GLZ and ASP to ASZ. Select the oxygen interacting with the zinc ion and rename it to OZ.
+8. After changing the interacting residues accordingly, locate the Zn ions on your pdb file. Make sure that their residue is plain ZN and not ZNXX (in my case it was named ZN10 and I got an error for uknown residue).
+9. Another issue I encountered, is that if your ZN residues are randomly placed inside your pdb, gromacs fails during the ``pdb2gmx`` process with the following error:
+    ```
+    Fatal error:
+The residues in the chain GLU1--VAL439 do not have a consistent type. The
+first residue has type 'Protein', while residue ZN1 is of type 'Ion'. Either
+there is a mistake in your chain, or it includes nonstandard residue names
+that have not yet been added to the residuetypes.dat file in the GROMACS
+library directory. If there are other molecules such as ligands, they should
+not have the same chain ID as the adjacent protein chain since it's a separate
+molecule.
 
-5. g
-6.  
+    ```
+11. 
+
 
 
   
