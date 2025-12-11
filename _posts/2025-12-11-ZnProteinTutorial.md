@@ -9,7 +9,7 @@ tags: [tutorials, GROMACS, MD, AMBER forcefield]
 author: Sofia Kiriakidi
 ---
 
-Working with metal-containing proteins is often very complicated, especially when no standrad focefields are available for treating this specific type of metal and most importantly, the protein residues that are bonded to it. Luckily, a group of researchers form Italy published a modified AMBER forcefield that was optimized specifically for Zn proteins, [first](https://pubs.acs.org/doi/10.1021/acs.jcim.9b00407?ref=recommended) treating HIS and CYS zinc-binding residues and [then](https://pubs.acs.org/doi/10.1021/acsomega.0c01337?ref=recommended) extending it also for ASp and GLU.
+Working with metal-containing proteins is often very complicated, especially when no standard focefields are available for treating this specific type of metal and most importantly, the protein residues that are bonded to it. Luckily, a group of researchers form Italy published a modified AMBER forcefield that was optimized specifically for Zn proteins, [first](https://pubs.acs.org/doi/10.1021/acs.jcim.9b00407?ref=recommended) treating HIS and CYS zinc-binding residues and [then](https://pubs.acs.org/doi/10.1021/acsomega.0c01337?ref=recommended) extending it also for ASp and GLU.
 
 In this work we will use the work of [Marina Macchiagodena](https://orcid.org/0000-0002-3151-718X) _et al._ in order to prepare a system for MD simulation, containing Zn and a ligand. They have also worked on cadmium-containing proteins, more details you can find [here](https://onlinelibrary.wiley.com/doi/10.1002/jcc.70154).
 
@@ -18,3 +18,11 @@ So, what you need to do first is to download the gromacs parameter files from th
 <p align="center">
   <img src="https://sofki.github.io//assets/img/zip.png" alt="Centered image" width="400"/>
 </p>
+
+If you open the README file you will be directed to the corresponding gromacs [page](https://manual.gromacs.org/current/how-to/topology.html) that explains how to add an external residue to a local copy of a forcefield. We will take this process step by step.
+
+1. First, you will need to create a local copy of an amber forcefield, copying it from your gromacs directory to your working folder.
+> [!WARNING]
+> This requires immediate attention: Critical step ahead.
+
+2. 
