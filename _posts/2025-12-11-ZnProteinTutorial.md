@@ -36,4 +36,9 @@ If you open the README file you will be directed to the corresponding gromacs [p
   <p align="center">
     <img src="https://sofki.github.io//assets/img/ffnonbonded.png" alt="Centered image" width="400"/>
   </p>
-    
+
+3. In the aminoacids.rtp ignore the first part illustrated in the picture below, since it already exists in your local aminoacids.rtp file and multiple entries might cause errors.
+  <p align="center">
+    <img src="https://sofki.github.io//assets/img/ffnonbonded.png" alt="Centered image" width="400"/>
+  </p>
+4. 
