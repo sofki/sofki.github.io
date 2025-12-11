@@ -81,8 +81,8 @@ replace _PATTERN_ with what is appropriate for your case. In my case it was "HET
 obabel -ipdb systemZn.pdb -opdb -O final.pdb
 ```
 
-13. Now open your final.pdb and make sure that the ZN residues belong to a different chain from that of your protein. If not, change the Zn chain from e.g. A to B.
 
+13. Now open your final.pdb and make sure that the ZN residues belong to a different chain from that of your protein. If not, change the Zn chain from e.g. A to B.
 
 14. Now you are ready to build your topology with:
 ```
