@@ -87,7 +87,7 @@ obabel -ipdb systemZn.pdb -opdb -O final.pdb
 ```
 gmx pdb2gmx -f final.pdb -ter -ignh 
 ```
-  When prompted, choose your local copy opf the forcefield (normally the option 1)
+  When prompted, choose your local copy of the forcefield (normally the option 1)
 
 
 
