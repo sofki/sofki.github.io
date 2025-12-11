@@ -13,4 +13,8 @@ Working with metal-containing proteins is often very complicated, especially whe
 
 In this work we will use the work of [Marina Macchiagodena](https://orcid.org/0000-0002-3151-718X) _et al._ in order to prepare a system for MD simulation, containing Zn and a ligand. They have also worked on cadmium-containing proteins, more details you can find [here](https://onlinelibrary.wiley.com/doi/10.1002/jcc.70154).
 
-So, what you need to do first is to download the gromacs parameter files from the supporting info of the two papers concerning Zn mentioned above.
+So, what you need to do first is to download the gromacs parameter files from the supporting info of the two papers concerning Zn mentioned above. If you decompress the .zip file, you will se a list like that below:
+
+<p align="center">
+  <img src="https://sofki.github.io//assets/img/zip.png" alt="Centered image" width="400"/>
+</p>
