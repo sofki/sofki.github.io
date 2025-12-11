@@ -64,13 +64,29 @@ molecule.
 
     ```
 
-10. A way to bypass this problem is by reordering your pdb file. In my case. I also had a ligand (resname UNK), so I decided to put all the ZN ions in the end of the protein just before the ligand. To do so, execute the following commands. The openbabel package is needed in order to reorder and renumber the file.
+10. A way to bypass this problem is by reordering your pdb file. In my case. I also had a ligand (resname UNK), so I decided to put all the ZN ions in the end of the protein just before the ligand. To do so, execute the following commands. 
 ```
 grep 'Zn' system.pdb > Zn.pdb && grep -v 'Zn' system.pdb > system_no_Zn.tmp && mv system_no_Zn.tmp system.pdb
+```
+in order to remove the ZN ions from your system file and write two seerate files; one containing everything except Zn (named again system.pdb) and one with only the Zn ions (named Zn.pdb)
+
+11. Then we will write a new .pdb file by placing the Zn ions exactly **before** our ligand.
+```
 awk '/PATTERN/ && !done { system("cat Zn.pdb"); done=1 } { print }' system.pdb > systemZn.pdb
+```
+replace _PATTERN_ with what is appropriate for your case. In my case it was "HETATM 7013  C   UNK", i.e., the firts atom of my ligand. You may also do this by hand, by opening the system.pdb file and pasting the ZN residues in an appropriate place (preferably, right after the terminal residue of your protein).
+
+12. The last step is to reorder and renumber the pdb file, because after all these text modifications the numbering will not be correct. The openbabel package is needed in order to reorder and renumber the file.
+```
 obabel -ipdb systemZn.pdb -opdb -O final.pdb
 ```
-11. 
+13. Now open your final.pdb and make sure that the ZN residues belong to a different chain from that of your protein. If not, change the Zn chain from e.g. A to B.
+14. Now you are ready to build your topology with:
+```
+gmx pdb2gmx -f final.pdb -ter -ignh 
+```
+  When prompted, choose your local copy opf the forcefield (normally the option 1)
+
 
 
 
