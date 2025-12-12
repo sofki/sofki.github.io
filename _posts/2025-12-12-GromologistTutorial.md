@@ -44,10 +44,10 @@ t.molecules[0].write_atomtypes('amber99sb.ff/atomtypes.dat')
 ```
 gmx pdb2gmx -f system.pdb -ighnh -ter
 ```
-
-    Do not forget to choose the *local* copy of your forcefield, normally the selection 1.
+Do not forget to choose the *local* copy of your forcefield, normally the selection 1.
     
 7.  After this step, you will have a generated topol.top file. However, the file will be missing the atom types of your ligand. Although the gromologist actual tutorial suggested an automated way of doing it, I encountered some issues (might be my fault) but I figured that it is easier to copy the [atomtypes] directly from your ligand_GMX.itp and paste it in your topol.top file, right after the " Include forcefield parameters" section:
+
 ```
 ; Include forcefield parameters
 #include "./amber99sb.ff/forcefield.itp"
@@ -77,11 +77,11 @@ gmx pdb2gmx -f system.pdb -ighnh -ter
 
 ```
 
-8.  Now we are ready to use gromologist for an automated system setup. We will utilise the ``prepare_system`` module where we can set a lot of defaults and let it run up to the energy minimization. For a detailed list of teh possible options check [this](https://gitlab.com/KomBioMol/gromologist/-/wikis/Automated-system-preparation). In my case, I used all the defaults, except adding the ``-neutral`` keyword in genion, in order to not only add 0.15M of KCL, but also all the extra ions needed to neutralise the system. You may see the defaults in the link provided above. So, again in an ipython environment we do:
+8.  Now we are ready to use gromologist for an automated system setup. We will utilise the ``prepare_system`` module where we can set a lot of defaults and let it run up to the energy minimization. For a detailed list of the possible options check [this](https://gitlab.com/KomBioMol/gromologist/-/wikis/Automated-system-preparation). In my case, I used all the defaults, except adding the ``-neutral`` keyword in genion, in order to not only add 0.15M of KCL, but also all the extra ions needed to neutralise the system. You may see the defaults in the link provided above. So, again in an ipython environment we do:
 ```
 gml.prepare_system('conf.gro', topology='topol.top', neutral='')
 ```
-     Where conf.gro is the output of ``pdb2gmx`` of the previous step.
+Where conf.gro is the output of ``pdb2gmx`` of the previous step.
 
 After a short while and if nothing fails, we will have a minimzed structure from where we can proceed with our usual equilibration protocol. 
 
