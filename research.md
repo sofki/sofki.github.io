@@ -2,7 +2,7 @@
 title: Research Projects
 ---
 
-### Waste2Drug: Valorisation of agricultural waste; Accessing and developing biomass subproducts for drug design
+### [Waste2Drug](sofki.github.io/waste-2-drug): Valorisation of agricultural waste; Accessing and developing biomass subproducts for drug design
 A Horizon Europe funded project through the MSCA-PF fellowships in order to study how to convert molecules abundant in agricultural waste into novel anticancer drugs. A sustainable bioeconomy scheme aspiring to valorise waste through innovative drug design.
 
 ### Mechanistic Studies on Catalysis
