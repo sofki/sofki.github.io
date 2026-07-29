@@ -40,7 +40,7 @@ t.molecules[0].to_rtp('amber99sb.ff/aminoacids.rtp')
 t.molecules[0].write_atomtypes('amber99sb.ff/atomtypes.dat')
 ```
 
-6.  Now, if you have a .pdb file taht contains both your protein and ligand, namely system.pdb, you can run ``pdb2gmx`` as follows:
+6.  Now, exit the ipython platform and return to the terminal. If you have a .pdb file that contains both your protein and ligand, namely system.pdb, you can run ``pdb2gmx`` as follows:
 ```
 gmx pdb2gmx -f system.pdb -ignh -ter
 ```
