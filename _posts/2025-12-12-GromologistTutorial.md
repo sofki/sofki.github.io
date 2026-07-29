@@ -44,9 +44,7 @@ t.molecules[0].write_atomtypes('amber99sb.ff/atomtypes.dat')
 ```
 gmx pdb2gmx -f system.pdb -ignh -ter
 ```
-Do not forget to choose the *local* copy of your forcefield, normally the selection 1.
-
-A possible source of error in this step is that your molecule's atom types are named differently inside your .pdb file and the ligand_GMX.itp. In thic sae the pdb2gmx will fail, so you need to change your pdb's atom naming system in accordance with the atom name of the .itp file.
+Do not forget to choose the *local* copy of your forcefield, normally the selection 1. A possible source of error in this step is that your molecule's atom types are named differently inside your .pdb file and the ligand_GMX.itp. In thic sae the pdb2gmx will fail, so you need to change your pdb's atom naming system in accordance with the atom name of the .itp file.
     
 7.  After this step, you will have a generated topol.top file. However, the file will be missing the atom types of your ligand. Although the gromologist actual tutorial suggested an automated way of doing it, I encountered some issues (might be my fault) but I figured that it is easier to copy the [atomtypes] directly from your ligand_GMX.itp and paste it in your topol.top file, right after the " Include forcefield parameters" section:
 
