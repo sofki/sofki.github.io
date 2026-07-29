@@ -79,7 +79,7 @@ A possible source of error in this step is that your molecule's atom types are n
 
 ```
 
-8.  Now we are ready to use gromologist for an automated system setup. We will utilise the ``prepare_system`` module where we can set a lot of defaults and let it run up to the energy minimization. For a detailed list of the possible options check [this](https://gitlab.com/KomBioMol/gromologist/-/wikis/Automated-system-preparation). In my case, I used all the defaults, except adding the ``-neutral`` keyword in genion, in order to not only add 0.15M of KCL, but also all the extra ions needed to neutralise the system. You may see the defaults in the link provided above. So, again in an ipython environment we do:
+8.  Now we are ready to use gromologist for an automated system setup. We should again enter tyhe ipython platform and import gromologist like we did before. We will utilise the ``prepare_system`` module where we can set a lot of defaults and let it run up to the energy minimization. For a detailed list of the possible options check [this](https://gitlab.com/KomBioMol/gromologist/-/wikis/Automated-system-preparation). In my case, I used all the defaults, except adding the ``-neutral`` keyword in genion, in order to not only add 0.15M of KCL, but also all the extra ions needed to neutralise the system. You may see the defaults in the link provided above. So, again in an ipython environment we do:
 ```
 gml.prepare_system('conf.gro', topology='topol.top', neutral='')
 ```
