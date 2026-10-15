@@ -13,4 +13,11 @@ In this tutorial, we will see how to use the open-source ML package [REINVENT4](
 
 The most difficult part of this tutorial is to install all needed packages at your Linux machine and get them work together! Start by installing Maize, REINVENT4 and Autodock-GPU, following the instructions at their corersponding github pages, provided as links above. I am providing here a .yml for my working reinvent4 conda environment to **use as a reference**, but please have in mind that the aforementioned packages should be installed according to their instructions, you want be able to do it automatically using my .yml file (or if you can, email me how!!). The file can be found [here](https://github.com/sofki/sofki.github.io/blob/master/assets/files/reinvent4.yml).
 
+REINVENT4 uses agents (a.k.a. pretained Neural Network models) in order to predict the next character in a SMILES string and construct a new molecule. The agents are already trained on large ChEMBL databases of bioactive molecules, so that they can "recognise" what a drug molecule looks like. The use of pretrained models is very useful for small drug discovery projects when there is lack of sufficient data.
+
+
+
+Assuming you have a working conda environment with Maize, REINVENT and Autodock-GPU, you should start by moving these configuration files at your working directory:
+
+
 
