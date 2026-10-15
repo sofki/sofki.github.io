@@ -3,8 +3,8 @@ layout: post
 title: ML-derived p-cymene derivatives using REINVENT4
 subtitle: An ML tutorial using the open-source REINVENT4 package with pretrained models 
 cover-img: 
-thumbnail-img: https://sofki.github.io//assets/img/reinvent.png
-share-img: https://sofki.github.io//assets/img/reinvent.png
+thumbnail-img: https://sofki.github.io//assets/img/reinvent4.png
+share-img: https://sofki.github.io//assets/img/reinvent4.png
 tags: [tutorials, ML, derivatives]
 author: Sofia Kiriakidi
 ---
