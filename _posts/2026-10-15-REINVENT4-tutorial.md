@@ -26,16 +26,16 @@ In **Transfer Learning** a model trained on a large, general corpus — here a C
 The next step is to decide which of the available generarors we will use. REINVENT4 offers four different types of generators, *Reinvent* where completely *de novo* atom-by-atom generation takes place, *Libinvent* where one may provide a seed molecule and build a library of derivatives with scaffold decoration, *Linkinvent* where two "warheads" are supplied for scaffold linking and the generator produces suitable linkers and *Mol2Mol* where a seed molecule is supplied as a restraint and the generator seeks to provide with similar molecules. For *Waste2Drug*, we want to produce derivatives (and not just similar molecules) of p-cymene, so the most appropriate approach was to use the *Libinvent* generator.
 
 Finally, we have to set some scoring criteria, relevant to our project. For *Waste2Drug*, we used the following usual cirteria for drug design:
-* SMARTS alerts: large rings (synthetically difficult), peroxide bond (highly reactive, metabolically unstable, ROS generation cytotoxic), charged carbon (unstable), disulfide bond (highly reactive, metabolically unstable, unselective adducts with CYS), hydrazine bond(hepatotoxic) - groups to avoid for known problems related to druggability
-* rotatable bonds < 10
-* stereogenic centers < 2
-* 350 < Mw < 600
-* logP <= 5
-* TPSA <=150 (The Topological Polar Surface Area measures the surface area of a molecule's polar atoms -primarily oxygen and nitrogen, including attached hydrogens- and it is a tool for predicting a drug's cell permeability, oral absorption, and bioavailability)
+* **SMARTS alerts:** large rings (synthetically difficult), peroxide bond (highly reactive, metabolically unstable, ROS generation cytotoxic), charged carbon (unstable), disulfide bond (highly reactive, metabolically unstable, unselective adducts with CYS), hydrazine bond(hepatotoxic) - groups to avoid for known problems related to druggability
+* **rotatable bonds < 10**
+* **stereogenic centers < 2**
+* **350 < Mw < 600**
+* **logP <= 5**
+* **TPSA <=150** (The Topological Polar Surface Area measures the surface area of a molecule's polar atoms -primarily oxygen and nitrogen, including attached hydrogens- and it is a tool for predicting a drug's cell permeability, oral absorption, and bioavailability)
 * aromatic rings < 5
-* Cl(<=1),F(<4)
-* HB donors < 5, acceptors < 10
-* Docking Score
+* **Cl(<=1),F(<4)**
+* **HB donors < 5, acceptors < 10**
+* **Docking Score**
 
 The last criterium is the most complicated technically, since it forces us to use Maize combined with Autodock-GPU, instead of just the REINVENT4 code. However, it is the one that makes our model target-specific, as it takes into account the docking score of the generated molecule into the target in question, and if the score is very low, the molecule is rejected (it can be a perfect drug molecule but for another target). It is worth noting that the user can adjust the weights of the criteria and choose what matters most for their project.
 
@@ -44,7 +44,7 @@ Now let's go to the practical part! Assuming you have a working conda environmen
 * stage2.toml
 * stage2_scoring.toml
 
-examples for both of which can be found in the [REINVENT github page](contrib/tutorials/maize/Libinvent/6G5J_vs_8ZYP)
+examples for both of which can be found in the [REINVENT github page](https://github.com/MolecularAI/REINVENT4/tree/main/contrib/tutorials/maize/Libinvent/6G5J_vs_8ZYP) and should be modified accordingly to fit your own project.
 
 
 
