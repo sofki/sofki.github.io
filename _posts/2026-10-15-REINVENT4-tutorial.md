@@ -48,7 +48,7 @@ examples for both of which can be found in the [REINVENT github page](https://gi
 
 Let's now inspect both of the files and discuss what they do and what needs to be changed for your own setup.
 
-**staged2.toml:**
+**staged2.toml:** comments are added for explanation
 
 ```
 run_type = "staged_learning" #chooses the run mode, other options are "sampling", "scoring", "transfer_learning"
@@ -60,9 +60,12 @@ json_out_config = "_stage2.json" #name of the json output file
 
 use_checkpoint = true #if it is the first run, set it to false, if you continue from a previous checkpoint, set it to true
 
-prior_file = "libinvent.prior" #choose the appropriate file for the generator that you want to use (reinvent, libinvent, linkinvent, mol2mol). The priors can be found at your local REINVENT4 directory (created when you download the git repository in order to install REINVENT4) in ~/REINVENT4/priors/. Remember to put the whole path if it is not in the same directory as your toml files.
+prior_file = "libinvent.prior" #choose the appropriate file for the generator that you want to use (reinvent, libinvent, linkinvent, mol2mol).
+#The priors can be found at your local REINVENT4 directory (created when you download the git repository in order to install REINVENT4) in ~/REINVENT4/priors/.
+#Remember to put the whole path if it is not in the same directory as your toml files.
 agent_file = "stage2.chkpt" #if it is your first run, put the prior file, otherwise use the checkpoint that you jsut wrote from your previous run
-smiles_file = "scaffolds.smi" #if you want to run a Libinvent model, you need to provide a scaffolds file, where the model will get the information on the changes you want to make to your seed molecule. This file will explained in detail later on
+smiles_file = "scaffolds.smi" #if you want to run a Libinvent model, you need to provide a scaffolds file,
+#where the model will get the information on the changes you want to make to your seed molecule. This file will explained in detail later on
 
 summary_csv_prefix = "stage2" #prefix for the csv files that will be produced
 
@@ -71,33 +74,57 @@ randomize_smiles = true # Present the input scaffold/SMILES to the network in a 
 
 [learning_strategy]
 # How the agent is updated from the reward.
-type = "dap" 
+type = "dap" #The update rule. "dap" is the REINVENT default and the best-tested option;
 sigma = 128
+# Weight of the score relative to the prior. This is the main knob for the
+# exploitation/exploration trade-off: higher sigma chases the reward harder
+# but drifts further from the prior and collapses onto fewer scaffolds;
+# lower sigma keeps diversity but learns slowly. 128 is a fairly aggressive
+# setting — 60-128 is the usual range.
 rate = 0.0001
+# Learning rate of the Adam optimizer for the agent's weights. Separate from
+# sigma: sigma sets how far the target moves, rate sets how fast the network
+# chases it.
 
 
 [diversity_filter]
+# Discourages the agent from re-proposing molecules it has already seen,
+# which is the main defence against mode collapse.
 
-type = "PenalizeSameSmiles"
-penalty_multiplier = 0.2
+type = "PenalizeSameSmiles"  # Filter variant. "PenalizeSameSmiles" acts on exact repeats.
+penalty_multiplier = 0.2 # Score multiplier applied on each repeat: 0.2 cuts a duplicate's score
+# to a fifth. Lower is harsher; 1.0 is no penalty.
 
 
 [inception]
+# Keeps a buffer of the best-scoring molecules seen so far and replays them
+# into the loss, so good hits keep teaching after the step that found them.
 
-memory_size = 50
-sample_size = 10
+memory_size = 50 # How many top molecules the buffer holds.
+sample_size = 10 # How many are drawn from the buffer and added to each batch's loss.
 
 
 [[stage]]
-termination = "simple"
-max_score = 1.0
-max_steps = 140
+termination = "simple" 
+# Termination rule. "simple" stops when the mean score of a batch reaches
+# max_score, or when max_steps is exhausted — whichever comes first.
 
-chkpt_file = 'stage2.chkpt'
+max_score = 1.0 #perfect score
+max_steps = 140 #number of steps
+
+chkpt_file = 'stage2.chkpt' # Where the trained agent is written when the stage ends (or is interrupted).
+# A later stage loads this as its agent_file — this is the link between stages.
 
 [stage.scoring]
+
 type = "geometric_mean"
-filename = "stage2_scoring.toml" 
+# Aggregation function. "geometric_mean" multiplies the weighted component
+# scores, so a near-zero in any one component drags the total down — every
+# criterion must be satisfied. "arithmetic_mean" lets a strong component
+# compensate for a weak one.
+
+filename = "stage2_scoring.toml" #now the files calls the second configuration file that you moved
+#into the working directory. We'll see its components next.
 
 ```
 
