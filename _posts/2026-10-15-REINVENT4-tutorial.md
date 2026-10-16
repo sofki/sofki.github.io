@@ -112,7 +112,7 @@ filename = "stage2_scoring.toml" #now the files calls the second configuration f
 
 ```
 
-
+(First write about scaffolds.smi)
 
 ```
 reinvent -l stage2_scoring.log stage2.toml
