@@ -17,7 +17,7 @@ REINVENT4 uses agents (a.k.a. pretained Neural Network models) in order to predi
 
 The image below ([source](https://link.springer.com/article/10.1186/s13321-024-00812-5?utm_source=rct_congratemailt&utm_medium=email&utm_campaign=oa_20240221&utm_content=10.1186%2Fs13321-024-00812-5)) shows the different funcionalities of REINVENT4. It uses TOML or JSON files as inputs, along with SMILES files when necessary. It offers different run modes, working with combined Reinforcement/Curriculum staged Learning or Transfer Learning and uses Sampling to generate molecules based on the results of the model produced by either mode of Learning, while it finally uses Scoring to score the generated molecules based on user-defined criteria.
 
-![reinventdiagram](https://github.com/sofki/sofki.github.io/blob/master/assets/img/REINVENT.png)
+![reinventdiagram](https://sofki.github.io//assets/img/REINVENT.png)
 
 In **Reinforcement / Curriculum (Staged) Learning** a pretrained generative model is fine-tuned by sampling candidate molecules, scoring them against the design criteria, and updating the model so that high-scoring structures become more likely — a reward-driven search rather than imitation of a fixed dataset. Because a multi-component objective (similarity to the seed molecule, physicochemical filters, docking) is hard to satisfy all at once, the reward is introduced in stages: the model first learns the easy, cheap criteria, and each stage’s model initialises the next, with harder and more expensive terms switched on progressively until the full objective is active.
 
