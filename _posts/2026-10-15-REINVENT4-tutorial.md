@@ -41,6 +41,17 @@ The last criterium is the most complicated technically, since it forces us to us
 
 Now let's go to the practical part! Assuming you have a working conda environment with Maize, REINVENT and Autodock-GPU, you should start by moving these configuration files at your working directory:
 
+* stage2.toml
+* stage2_scoring.toml
+
+examples for both of which can be found in the [REINVENT github page](contrib/tutorials/maize/Libinvent/6G5J_vs_8ZYP)
+
+
+
+```
+reinvent -l stage2_scoring.log stage2.toml
+```
+
 
 
 
