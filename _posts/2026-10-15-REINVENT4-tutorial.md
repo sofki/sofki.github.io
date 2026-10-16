@@ -21,13 +21,26 @@ The image below ([source](https://link.springer.com/article/10.1186/s13321-024-0
 
 In **Reinforcement / Curriculum (Staged) Learning** a pretrained generative model is fine-tuned by sampling candidate molecules, scoring them against the design criteria, and updating the model so that high-scoring structures become more likely — a reward-driven search rather than imitation of a fixed dataset. Because a multi-component objective (similarity to the seed molecule, physicochemical filters, docking) is hard to satisfy all at once, the reward is introduced in stages: the model first learns the easy, cheap criteria, and each stage’s model initialises the next, with harder and more expensive terms switched on progressively until the full objective is active.
 
-In **Transfer Learning** a model trained on a large, general corpus — here a ChEMBL-wide set of bioactive molecules — is reused as the starting point for a narrower task instead of being trained from scratch. The general model supplies the broadly useful knowledge (valid SMILES syntax, drug-like chemistry, common scaffolds and functional groups), and fine-tuning on a small focused set, such as known inhibitors of the target or analogues of the seed molecule, biases generation toward that chemical space. This makes the narrow task learnable from a few hundred or few thousand examples, far fewer than training from zero would require.
+In **Transfer Learning** a model trained on a large, general corpus — here a ChEMBL-wide set of bioactive molecules — is reused as the starting point for a narrower task instead of being trained from scratch. The general model supplies the broadly useful knowledge (valid SMILES syntax, drug-like chemistry, common scaffolds and functional groups), and fine-tuning on a small focused set, such as known inhibitors of the target or analogues of the seed molecule, biases generation toward that chemical space. This makes the narrow task learnable from a few hundred or few thousand examples, far fewer than training from zero would require. In this project, due to the very limited data (only 13 known inhibitors) we used the first approach for learning. 
 
-In this project, due to the very limited data (only 13 known inhibitors) we used the first approach for learning. The next step is to decide which of the available generarors we will use. REINVENT4 offers four different types of generators, *Reinvent* where completely *de novo* atom-by-atom generation takes place, *Libinvent* where one may provide a seed molecule and build a library of derivatives with scaffold decoration, *Linkinvent* where two "warheads" are supplied for scaffold linking and the generator produces suitable linkers and *Mol2Mol* where a seed molecule is supplied as a restraint and the generator seeks to provide with similar molecules. For *Waste2Drug*, we want to produce derivatives (and not just similar molecules) of p-cymene, so the most appropriate approach was to use the *Libinvent* generator.
+The next step is to decide which of the available generarors we will use. REINVENT4 offers four different types of generators, *Reinvent* where completely *de novo* atom-by-atom generation takes place, *Libinvent* where one may provide a seed molecule and build a library of derivatives with scaffold decoration, *Linkinvent* where two "warheads" are supplied for scaffold linking and the generator produces suitable linkers and *Mol2Mol* where a seed molecule is supplied as a restraint and the generator seeks to provide with similar molecules. For *Waste2Drug*, we want to produce derivatives (and not just similar molecules) of p-cymene, so the most appropriate approach was to use the *Libinvent* generator.
 
+Finally, we have to set some scoring criteria, relevant to our project. For *Waste2Drug*, we used the following usual cirteria for drug design:
+* SMARTS alerts: large rings (synthetically difficult), peroxide bond (highly reactive, metabolically unstable, ROS generation cytotoxic), charged carbon (unstable), disulfide bond (highly reactive, metabolically unstable, unselective adducts with CYS), hydrazine bond(hepatotoxic) - groups to avoid for known problems related to druggability
+* rotatable bonds < 10
+* stereogenic centers < 2
+* 350 < Mw < 600
+* logP <= 5
+* TPSA <=150 (The Topological Polar Surface Area measures the surface area of a molecule's polar atoms -primarily oxygen and nitrogen, including attached hydrogens- and it is a tool for predicting a drug's cell permeability, oral absorption, and bioavailability)
+* aromatic rings < 5
+* Cl(<=1),F(<4)
+* HB donors < 5, acceptors < 10
+* Docking Score
 
+The last criterium is the most complicated technically, since it forces us to use Maize combined with Autodock-GPU, instead of just the REINVENT4 code. However, it is the one that makes our model target-specific, as it takes into account the docking score of the generated molecule into the target in question, and if the score is very low, the molecule is rejected (it can be a perfect drug molecule but for another target). It is worth noting that the user can adjust the weights of the criteria and choose what matters most for their project.
 
-Assuming you have a working conda environment with Maize, REINVENT and Autodock-GPU, you should start by moving these configuration files at your working directory:
+Now let's go to the practical part! Assuming you have a working conda environment with Maize, REINVENT and Autodock-GPU, you should start by moving these configuration files at your working directory:
+
 
 
 
