@@ -15,6 +15,8 @@ The most difficult part of this tutorial is to install all needed packages at yo
 
 REINVENT4 uses agents (a.k.a. pretained Neural Network models) in order to predict the next character in a SMILES string and construct a new molecule. It uses Autoregressive Generation to do so, i.e., it builds the molecule one letter (token) at a time, based on the probability of what would make chemical sense. The agents are already trained on large ChEMBL databases of bioactive molecules, so that they can "recognise" what a drug molecule looks like. The use of pretrained models is very useful for small drug discovery projects when there is lack of sufficient data. For example, in this project, only 13 known inhibitors were already known for this receptor.Thirteen data points are too little for an ML model to work.
 
+![reinvnet](https://github.com/sofki/sofki.github.io/blob/master/assets/img/REINVENT.png)
+
 
 
 Assuming you have a working conda environment with Maize, REINVENT and Autodock-GPU, you should start by moving these configuration files at your working directory:
