@@ -41,10 +41,65 @@ The last criterium is the most complicated technically, since it forces us to us
 
 Now let's go to the practical part! Assuming you have a working conda environment with Maize, REINVENT and Autodock-GPU, you should start by moving these configuration files at your working directory:
 
-* stage2.toml
+* [stage2.toml](https://github.com/sofki/scripts/blob/main/DrugDesign/stage2.toml)
 * stage2_scoring.toml
 
-examples for both of which can be found in the [REINVENT github page](https://github.com/MolecularAI/REINVENT4/tree/main/contrib/tutorials/maize/Libinvent/6G5J_vs_8ZYP) and should be modified accordingly to fit your own project.
+examples for both of which can be found in the [REINVENT github page](https://github.com/MolecularAI/REINVENT4/tree/main/contrib/tutorials/maize/Libinvent/6G5J_vs_8ZYP) and should be modified accordingly to fit your own project. The ones that were used for *Waste2Drug* are also provided above for reference.
+
+Let's now inspect both of the files and discuss what they do and what needs to be changed for your own setup.
+
+**staged2.toml:**
+
+```
+run_type = "staged_learning" #chooses the run mode, other options are "sampling", "scoring", "transfer_learning"
+device = "cpu"  #the device was changeds to cpu instead of cuda:0 because I ran it in the cpu of my laptop, change accordingly
+tb_logdir = "tb_stage2" #creates a directory for TensorBoard event files
+json_out_config = "_stage2.json" #name of the json output file
+
+[parameters]
+
+use_checkpoint = true #if it is the first run, set it to false, if you continue from a previous checkpoint, set it to true
+
+prior_file = "libinvent.prior" #choose the appropriate file for the generator that you want to use (reinvent, libinvent, linkinvent, mol2mol). The priors can be found at your local REINVENT4 directory (created when you download the git repository in order to install REINVENT4) in ~/REINVENT4/priors/. Remember to put the whole path if it is not in the same directory as your toml files.
+agent_file = "stage2.chkpt" #if it is your first run, put the prior file, otherwise use the checkpoint that you jsut wrote from your previous run
+smiles_file = "scaffolds.smi" #if you want to run a Libinvent model, you need to provide a scaffolds file, where the model will get the information on the changes you want to make to your seed molecule. This file will explained in detail later on
+
+summary_csv_prefix = "stage2" #prefix for the csv files that will be produced
+
+batch_size = 10 # Molecules sampled per RL step. Small batches mean noisier updates but far fewer docking calls per step
+randomize_smiles = true # Present the input scaffold/SMILES to the network in a randomly permuted but chemically equivalent form each time it is used. Acts as data augmentation: it stops the agent from latching onto one particular string representation and generally improves the diversity and validity of what it generates.
+
+[learning_strategy]
+# How the agent is updated from the reward.
+type = "dap" 
+sigma = 128
+rate = 0.0001
+
+
+[diversity_filter]
+
+type = "PenalizeSameSmiles"
+penalty_multiplier = 0.2
+
+
+[inception]
+
+memory_size = 50
+sample_size = 10
+
+
+[[stage]]
+termination = "simple"
+max_score = 1.0
+max_steps = 140
+
+chkpt_file = 'stage2.chkpt'
+
+[stage.scoring]
+type = "geometric_mean"
+filename = "stage2_scoring.toml" 
+
+```
 
 
 
