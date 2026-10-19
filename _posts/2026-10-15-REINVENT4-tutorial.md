@@ -42,7 +42,8 @@ The last criterium is the most complicated technically, since it forces us to us
 Now let's go to the practical part! Assuming you have a working conda environment with Maize, REINVENT and Autodock-GPU, you should start by moving these configuration files at your working directory:
 
 * [stage2.toml](https://github.com/sofki/scripts/blob/main/DrugDesign/stage2.toml)
-* stage2_scoring.toml
+* [stage2_scoring.toml](https://github.com/sofki/scripts/blob/main/DrugDesign/stage2_scoring.toml)
+* [scaffolds.smi](https://github.com/sofki/scripts/blob/main/DrugDesign/scaffolds.smi)
 
 examples for both of which can be found in the [REINVENT github page](https://github.com/MolecularAI/REINVENT4/tree/main/contrib/tutorials/maize/Libinvent/6G5J_vs_8ZYP) and should be modified accordingly to fit your own project. The ones that were used for *Waste2Drug* are also provided above for reference.
 
@@ -112,7 +113,243 @@ filename = "stage2_scoring.toml" #now the files calls the second configuration f
 
 ```
 
-(First write about scaffolds.smi)
+Before moving to the second configuration file, let's see the **scaffolds.smi**:
+
+```
+[*:0]c1ccc(C(C)C)cc1
+Cc1ccc(C(C)[*:0])cc1
+Cc1c([*:0])cc(C(C)C)cc1
+Cc1cc([*:0])c(C(C)C)cc1
+Cc1c(cc(C(C)C)c([*:0])c1)
+Cc1c([*:0])c(C(C)C)ccc1
+Cc1ccc(C([*:0])([*:0]))cc1
+[*:0]c1ccc(C(C)[*:0])cc1
+[*:0]c1ccc(C([*:1])C)cc1
+Cc1ccc([*:0](C)[*:1])cc1
+Cc1ccc(C([*:0])([*:0]))c([*:0])c1
+[*:0]c1c([*:0])cc(C(C)C)c([*:0])c1
+[*:0]c1c([*:0])cc(C([*:1])C)cc1
+Cc1ccc([*:0](C)[*:1])c([*:0])c1
+[*:0]c1c([*:1])cc(C([*:2])C)cc1
+Cc1ccc([*:0](C)[*:0])c([*:1])c1
+Cc1ccc([*:1](C)[*:0])c([*:0])c1
+Cc1ccc([*:1](C)[*:1])c([*:0])c1
+Cc1ccc([*:1](C)[*:0])c([*:1])c1
+Cc1ccc([*:0](C)[*:1])c([*:1])c1
+```
+It contains a list of smiles, where a wildcart placement [*:0] has been put on the atom (p-cymene carbon in this case) that we want to substitute. In case where more than one substitution is desired, a second wildcart [*:1] can be put. The *Libinvent* algorithm will now create p-cymene dervatives by substititing on the positions that we defined in the ```scaffolds.smi```.
+
+As we saw before, the final stage of ```stage2.toml``` is to call the scoring configuration file, ```stage2_scoring.toml```, which includes the scoring criteria that we chose to impose for our project. Let's inspect it:
+
+**staged2_scoring.toml:**
+
+```
+[[component]]
+
+# in this part we include the SMARTS alerts previously described
+
+[component.custom_alerts]
+[[component.custom_alerts.endpoint]]
+name = "Minimal Alerts"
+
+[component.custom_alerts.endpoint.params]
+smarts = ["[*;r{8-17}]", "[#8][#8]", "[#6;+]", "[#16][#16]", "[#7;!n][#7;!n]"]
+
+
+[[component]]
+
+#in this part, we impose a maxixum number of rotable bonds
+[component.NumRotBond]
+[[component.NumRotBond.endpoint]]
+name = "# rotatable bonds (<10)"
+weight = 1
+
+[component.NumRotBond.endpoint.transform]
+low = 6
+high = 14
+k = 0.25
+type = "reverse_sigmoid" #means lower is better
+
+
+[[component]]
+
+#here a maximum number of stereo centers is set
+
+[component.NumAtomStereoCenters]
+[[component.NumAtomStereoCenters.endpoint]]
+name = "# stereo centers (<2)"
+weight = 1
+
+[component.NumAtomStereoCenters.endpoint.transform]
+low = 0
+high = 2
+k = 0.25
+type = "reverse_sigmoid"
+
+
+[[component]]
+
+#here we set the range of preferred molecular weights
+
+[component.molecular_weight]
+[[component.molecular_weight.endpoint]]
+name = "Molecular weight (350-600)"
+weight = 1
+
+[component.molecular_weight.endpoint.transform]
+low = 300
+high = 650
+coef_div = 500
+coef_si = 20
+coef_se = 20
+type = "double_sigmoid" #It’s built as the difference of two rising sigmoids — one centered at low, one at high. Subtracting the second from the first carves out a plateau in between, so the curve rises from 0, flattens near 1, then falls back to 0.
+
+
+[[component]]
+
+#we set logP <=5 to control the lipophilicity of the suggested molecules
+
+[component.SlogP]
+[[component.SlogP.endpoint]]
+name = "logP (<=5)"
+weight = 1
+
+[component.SlogP.endpoint.transform]
+low = 0
+high = 8
+k = 0.25
+type = "reverse_sigmoid"
+
+
+[[component]]
+
+#we set the Topological Polar Surface Area
+[component.tpsa]
+[[component.tpsa.endpoint]]
+name = "TPSA (<=150)"
+weight = 1
+
+[component.tpsa.endpoint.transform]
+low = 125
+high = 200
+k = 0.25
+type = "reverse_sigmoid"
+
+
+[[component]]
+
+#set the number of aromatic bonds
+
+[component.NumAromaticRings]
+[[component.NumAromaticRings.endpoint]]
+name = "# aromatic rings (<5)"
+weight = 1
+
+[component.NumAromaticRings.endpoint.transform]
+low = 4
+high = 5
+k = 0.25
+type = "reverse_sigmoid"
+
+
+[[component]]
+
+#in the following components we set maximum numbers of certain groups
+
+[component.GroupCount]
+[[component.GroupCount.endpoint]]
+name = "# Cl (<=1)"
+weight = 1
+
+[component.GroupCount.endpoint.params]
+smarts = "[Cl]"
+[component.GroupCount.endpoint.transform]
+low = 1
+high = 3
+k = 0.5
+type = "reverse_sigmoid"
+
+
+[[component]]
+
+[component.GroupCount]
+[[component.GroupCount.endpoint]]
+name = "# F (<4)"
+weight = 1
+
+[component.GroupCount.endpoint.params]
+smarts = "[F]"
+[component.GroupCount.endpoint.transform]
+low = 3
+high = 4
+k = 0.5
+type = "reverse_sigmoid"
+
+
+[[component]]
+
+#set maximum number of Hydrogen-Bond Donors
+
+[component.HBondDonors]
+[[component.HBondDonors.endpoint]]
+name = "# HB-donors (<5)"
+weight = 1
+
+[component.HBondDonors.endpoint.transform]
+low = 3
+high = 7
+k = 0.5
+type = "reverse_sigmoid"
+
+
+[[component]]
+
+#set maximum number of Hydrogen-Bond Acceptors
+
+[component.HBondAcceptors]
+[[component.HBondAcceptors.endpoint]]
+name = "# HB-acceptors (<10)"
+weight = 1
+
+[component.HBondAcceptors.endpoint.transform]
+low = 6
+high = 14
+k = 0.25
+type = "reverse_sigmoid"
+
+
+[[component]]
+[component.Maize]
+
+#Now we have to use Maize to call AutodockGPU and run the doking calculation, in order to include the Docking Score as a Scoring Function
+
+[[component.Maize.endpoint]]
+name = "AutoDockGPU"
+weight = 5 #we set a higher weight because it is more important to be a suitable ligand for the specific target
+
+[component.Maize.endpoint.params]
+executable = "/home/sofki/miniconda3/envs/reinvent4/bin/maize"
+workflow = "/home/sofki/REINVENT4/contrib/tutorials/maize/autodock_gpu.yaml"
+config = "/home/sofki/REINVENT4/contrib/tutorials/maize/maize_global_config.toml"
+log = "maize_adg.log"
+debug = false
+
+[component.Maize.endpoint.transform]
+high = -5.0
+low = -15.0
+k = 0.3
+type = "reverse_sigmoid"
+
+[component.Maize.endpoint.params.parameters]
+#num_variants = 4  # Gypsum
+#thoroughness = 4  # Gypsum
+#pH_range = [6.8, 7.5]  # Gypsum
+#num_jobs = 8  # Gypsum
+grid_file = "receptor.maps.fld"  # Autodock GPU
+save_best_pose_file = "poses/best_pose.sdf"
+```
+
+(comments are added for explanation)
 
 ```
 reinvent -l stage2_scoring.log stage2.toml
