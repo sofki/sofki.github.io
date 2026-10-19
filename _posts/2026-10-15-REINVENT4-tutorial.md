@@ -137,7 +137,7 @@ Cc1ccc([*:1](C)[*:1])c([*:0])c1
 Cc1ccc([*:1](C)[*:0])c([*:1])c1
 Cc1ccc([*:0](C)[*:1])c([*:1])c1
 ```
-It contains a list of smiles, where a wildcart placement [*:0] has been put on the atom (p-cymene carbon in this case) that we want to substitute. In case where more than one substitution is desired, a second wildcart [*:1] can be put. The *Libinvent* algorithm will now create p-cymene dervatives by substititing on the positions that we defined in the ```scaffolds.smi```.
+It contains a list of smiles, where a wildcart placement ```[*:0]``` has been put on the atom (p-cymene carbon in this case) that we want to substitute. In case where more than one substitution is desired, a second wildcart ```[*:1]``` can be put. The *Libinvent* algorithm will now create p-cymene dervatives by substititing on the positions that we defined in the ```scaffolds.smi```.
 
 As we saw before, the final stage of ```stage2.toml``` is to call the scoring configuration file, ```stage2_scoring.toml```, which includes the scoring criteria that we chose to impose for our project. Let's inspect it:
 
@@ -328,9 +328,9 @@ name = "AutoDockGPU"
 weight = 5 #we set a higher weight because it is more important to be a suitable ligand for the specific target
 
 [component.Maize.endpoint.params]
-executable = "/home/sofki/miniconda3/envs/reinvent4/bin/maize"
-workflow = "/home/sofki/REINVENT4/contrib/tutorials/maize/autodock_gpu.yaml"
-config = "/home/sofki/REINVENT4/contrib/tutorials/maize/maize_global_config.toml"
+executable = "/home/sofki/miniconda3/envs/reinvent4/bin/maize" #you should include where the executable for maiz is to be found, it will be in a similar path inside your conda environment
+workflow = "/home/sofki/REINVENT4/contrib/tutorials/maize/autodock_gpu.yaml" #this file is provided in the tutorials section of the REINVENT and a local copy can be found in a similar path at your local version of the REINVENT github page, you downloaded ot as the first step for the installation
+config = "/home/sofki/REINVENT4/contrib/tutorials/maize/maize_global_config.toml" #as above
 log = "maize_adg.log"
 debug = false
 
