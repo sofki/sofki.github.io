@@ -142,6 +142,7 @@ It contains a list of smiles, where a wildcart placement ```[*:0]``` has been pu
 As we saw before, the final stage of ```stage2.toml``` is to call the scoring configuration file, ```stage2_scoring.toml```, which includes the scoring criteria that we chose to impose for our project. Let's inspect it:
 
 **staged2_scoring.toml:**
+(comments are added for explanation)
 
 ```
 [[component]]
@@ -341,16 +342,42 @@ k = 0.3
 type = "reverse_sigmoid"
 
 [component.Maize.endpoint.params.parameters]
-#num_variants = 4  # Gypsum
-#thoroughness = 4  # Gypsum
-#pH_range = [6.8, 7.5]  # Gypsum
-#num_jobs = 8  # Gypsum
-grid_file = "receptor.maps.fld"  # Autodock GPU
-save_best_pose_file = "poses/best_pose.sdf"
+grid_file = "receptor.maps.fld"  # Autodock GPU gridfile must be present in your working directory. Will be discussed below
+save_best_pose_file = "poses/best_pose.sdf" #set a directory where the best docking poses will be saved after each run
 ```
 
-(comments are added for explanation)
+Now let's discuss the maize configuration files that are called inside the ```stage2_scoring.toml``` file.
 
+First, the ``` autodock_gpu.yaml```, which is a maize workflow definition: a graph of nodes that takes SMILES in and returns docking scores. REINVENT invokes it through the Maize scoring component. You do not need to change anything in this file.
+
+Now, let's move to the ```maize_global_config.toml```. This files tells maize where to find the executables that is goining to use. You need to change the paths accordinlgy to your machine. Some examples are:
+
+```
+scratch = "/home/sofki/.cache/maize"
+#a scratch folder for temporary files, you need to set or create it
+
+# Default SLURM options (not needed if you do not run at an HPC)                                                                                                  [batch]
+queue = "default" 
+walltime = "12:00:00"
+max_jobs = 12
+
+....
+
+[autodockgpu]  # needed for tutorial                                                                                                                               commands.autodock_gpu = "/home/sofki/AutoDock-GPU/bin/autodock_gpu_128wi" #you should set the actual path for your local autodock_gpu installation
+```
+
+The rest of the settings will not be needed for this tutorial, but in case you use any of these extra software, you will need to set the paths correctly.
+
+Now before we actually run the workflow, we need to have the docking grid files ```receptor.maps.fld``` in our working directory. You can do this directly with Autodock_GPU but I prefer to use AutoDockTools (ADT) so I can inspect my grid box through the Graphical User Interface. After saving the receptor.gpf file created in ADT, you should have the ```receptor.pdbqt``` and ```reflig.pdb``` files in the same directory where you will run the following command:
+
+```
+autogrid4 -p receptor.gpf -l receptor.glg
+```
+
+This will create all the files (including .maps.fld) taht maize will need in order to run the docking with AutoDockGPU.
+
+We are finally ready to run the actual Generative AI Drug Design Workflow:
+                                                                
 ```
 reinvent -l stage2_scoring.log stage2.toml
 ```
