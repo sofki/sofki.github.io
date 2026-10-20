@@ -357,13 +357,14 @@ scratch = "/home/sofki/.cache/maize"
 #a scratch folder for temporary files, you need to set or create it
 
 # Default SLURM options (not needed if you do not run at an HPC)                                                                                                  [batch]
-queue = "default" 
+queue = "default"
 walltime = "12:00:00"
 max_jobs = 12
 
 ....
 
-[autodockgpu]  # needed for tutorial                                                                                                                               commands.autodock_gpu = "/home/sofki/AutoDock-GPU/bin/autodock_gpu_128wi" #you should set the actual path for your local autodock_gpu installation
+[autodockgpu]  # needed for tutorial
+commands.autodock_gpu = "/home/sofki/AutoDock-GPU/bin/autodock_gpu_128wi" #you should set the actual path for your local autodock_gpu installation
 ```
 
 The rest of the settings will not be needed for this tutorial, but in case you use any of these extra software, you will need to set the paths correctly.
@@ -375,6 +376,15 @@ autogrid4 -p receptor.gpf -l receptor.glg
 ```
 
 This will create all the files (including .maps.fld) taht maize will need in order to run the docking with AutoDockGPU.
+
+In summary, before actually running the workflow, the following should be present at your wokring directory:
+
+* stage2.toml
+* stage2_scoring.toml
+* scaffolds.smi
+* receptor.maps.fld (and all the maps files that it created)
+* a directory named ``poses``
+* the .prior and/or .chkpt files
 
 We are finally ready to run the actual Generative AI Drug Design Workflow:
                                                                 
