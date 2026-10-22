@@ -401,8 +401,9 @@ To do so, we will use the following jupyyer notebook files:
 
 We will first start with the filtering. From the total of 5200 molecules generated, we will first filter to keep only the valid and parseable SMILES, which will land us on 2889 molecules.
 
+![filter1](https://sofki.github.io//assets/img/filter1.png)
 
-
+Then, we will remove duplicates and put some threshold criteria, so we will see only the interesting molecules:
 
 
 
