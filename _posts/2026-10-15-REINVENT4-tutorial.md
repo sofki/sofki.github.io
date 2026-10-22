@@ -396,7 +396,7 @@ After a while (could be a couple of hours depending on your machine), .sdf files
 
 To do so, we will use the following jupyyer notebook files:
 
-* [filter.ipynb]((https://github.com/sofki/scripts/blob/main/DrugDesign/filter.ipynb)
+* [filter.ipynb](https://github.com/sofki/scripts/blob/main/DrugDesign/filter.ipynb)
 * [Analyses.ipynb]((https://github.com/sofki/scripts/blob/main/DrugDesign/Analyses.ipynb))
 
 We will first start with the filtering. From the total of 5200 molecules generated, we will first filter to keep only the valid and parseable SMILES, which will land us on 2889 molecules.
