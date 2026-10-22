@@ -403,7 +403,10 @@ We will first start with the filtering. From the total of 5200 molecules generat
 
 ![filter1](https://sofki.github.io//assets/img/filter1.png)
 
-Then, we will remove duplicates and put some threshold criteria, so we will see only the interesting molecules:
+Then, we will remove duplicates and put some threshold criteria, so we will see only the interesting molecules, which will leave us with only 15 molecules:
+
+![filter2](https://sofki.github.io//assets/img/filter2.png)
+
 
 
 
