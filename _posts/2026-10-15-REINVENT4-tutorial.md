@@ -397,7 +397,7 @@ After a while (could be a couple of hours depending on your machine), .sdf files
 To do so, we will use the following jupyyer notebook files:
 
 * [filter.ipynb](https://github.com/sofki/scripts/blob/main/DrugDesign/filter.ipynb)
-* [Analyses.ipynb]((https://github.com/sofki/scripts/blob/main/DrugDesign/Analyses.ipynb))
+* [Analyze.ipynb]((https://github.com/sofki/scripts/blob/main/DrugDesign/Analyze.ipynb))
 
 We will first start with the filtering. From the total of 5200 molecules generated, we will first filter to keep only the valid and parseable SMILES, which will land us on 2889 molecules.
 
@@ -407,11 +407,15 @@ Then, we will remove duplicates and put some threshold criteria, so we will see 
 
 ![filter2](https://sofki.github.io//assets/img/filter2.png)
 
-After saving the unique molecules, we will create a .csv file that matches each entro to the relevant .sdf file so we can find it and access it later:
+After saving the unique molecules, we will create a .csv file that matches each entry to the relevant .sdf file so we can find it and access it later:
 
 ![filter3](https://sofki.github.io//assets/img/filter3.png)
 ![filter4](https://sofki.github.io//assets/img/filter4.png)
 
+We will now move to the ``Analyze.ipynb`` in order to view and analyze our results:
 
+After loading the necessary functions, we will explore the data:
+
+![analyze1](https://sofki.github.io//assets/img/analyze1.png)
 
 
