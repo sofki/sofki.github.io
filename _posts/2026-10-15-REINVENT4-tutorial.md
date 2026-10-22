@@ -421,3 +421,13 @@ After loading the necessary functions, we will explore the data:
 We can then check the distribution of the AutoDock score:
 
 ![analyze2](https://sofki.github.io//assets/img/analyze2.png)
+
+the distribution of logP:
+
+![analyze3](https://sofki.github.io//assets/img/analyze3.png)
+
+and finally visualize their 2D structures:
+
+![analyze4](https://sofki.github.io//assets/img/analyze4.png)
+
+After more epochs, and after having reached a satisfactory docking score, we can proceed in further simulations (docking and MD) for our selected molecules!
