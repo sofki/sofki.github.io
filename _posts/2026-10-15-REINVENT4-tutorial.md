@@ -407,6 +407,11 @@ Then, we will remove duplicates and put some threshold criteria, so we will see 
 
 ![filter2](https://sofki.github.io//assets/img/filter2.png)
 
+After saving the unique molecules, we will create a .csv file that matches each entro to the relevant .sdf file so we can find it and access it later:
+
+![filter3](https://sofki.github.io//assets/img/filter3.png)
+![filter4](https://sofki.github.io//assets/img/filter4.png)
+
 
 
 
