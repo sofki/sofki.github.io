@@ -418,4 +418,6 @@ After loading the necessary functions, we will explore the data:
 
 ![analyze1](https://sofki.github.io//assets/img/analyze1.png)
 
+We can then check the distribution of the AutoDock score:
 
+![analyze2](https://sofki.github.io//assets/img/analyze2.png)
